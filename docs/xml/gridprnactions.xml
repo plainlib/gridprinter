@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fpdoc-descriptions><package name="GridPrinterPkg"><module name="GridPrnActions"><element name="TGridPrinterAction"><short>Standard-Action which links to a <var>GridPrinter</var> and calls its <var>Print</var> method to print a grid</short>
+      </element><element name="TGridPrinterAction.Notification"><short>Inherited procedure which sets the internal <var>FGridPrinter</var> variable to <var>nil</var> when the <var>GridPrinter</var> is deleted.</short>
+      </element><element name="TGridPrinterAction.Create"><short>Constructor of the <var>TGridPrinterAction</var> class</short>
+      </element><element name="TGridPrinterAction.ExecuteTarget"><short>Executes the <var>Print()</var> method of the associated <var>TGridPrinter</var> instance if that matches with the <var>Target</var> parameter.</short>
+      </element><element name="TGridPrinterAction.HandlesTarget"><short>Returns <var>true</var> when the parameter <var>Target</var> is the associated <var>GridPrinter</var>
+        </short>
+      </element><element name="TGridPrinterAction.UpdateTarget"><short>Disables the action if no <var>GridPrinter</var> is associated with the action or if the grid associated with the <var>GridPrinter</var> is not visible.</short>
+      </element><element name="TGridPrinterAction.GridPrinter"><short>Points to the <var>TGridPrinter</var> instance which is associated with the action.</short>
+      </element><element name="TGridPrintPreviewAction"><short>Standard-Action which links to a <var>GridPrintPreviewDialog</var> and calls its <var>Execute</var> method to display a preview a grid to be printed by a <var>GridPrinter</var>.</short>
+      </element><element name="TGridPrintPreviewAction.Notification"><short>Inherited procedure which sets the internal <var>FPreviewDlg</var> variable to <var>nil</var> when the associated <var>PrintPreviewDialog</var> is deleted.</short>
+      </element><element name="TGridPrintPreviewAction.Create"><short>Constructor of the <var>TGridPrintPreviewAction</var> class</short>
+      </element><element name="TGridPrintPreviewAction.ExecuteTarget"><short>Runs the <var>Execute()</var> method of the associated <var>TGridPrintPreviewDialog</var> instance if that matches with the <var>Target</var> parameter.</short>
+      </element><element name="TGridPrintPreviewAction.HandlesTarget"><short>Returns <var>true</var> when the parameter <var>Target</var> is the associated <var>GridPrintPreviewDialog</var>
+        </short>
+      </element><element name="TGridPrintPreviewAction.UpdateTarget"><short>Disables the action if no <var>PreviewDialog</var> is associated with the action or if that is not associated with a <var>GridPrinter</var>assigned to a visible grid.</short>
+      </element><element name="TGridPrinterAction.FGridPrinter"><short>Internal variable for the associated <var>TGridPrinter</var> instance.</short>
+      </element><element name="TGridPrintPreviewAction.FPreviewDlg"><short>Internal variable for the associated <var>TGridPrintPreviewDialog</var> instance.</short>
+      </element><element name="TGridPrintPreviewAction.PreviewDialog"><short>Points to the <var>TGridPrintPreviewDialog</var> instance which is associated with the action.</short>
+      </element>
+    </module>
+  </package>
+</fpdoc-descriptions>

@@ -1,0 +1,128 @@
+object MainForm: TMainForm
+  Left = 331
+  Height = 498
+  Top = 129
+  Width = 719
+  Caption = 'Printing a TsWorksheetGrid'
+  ClientHeight = 498
+  ClientWidth = 719
+  LCLVersion = '4.99.0.0'
+  OnCreate = FormCreate
+  object ButtonPanel: TPanel
+    Left = 6
+    Height = 25
+    Top = 467
+    Width = 707
+    Align = alBottom
+    AutoSize = True
+    BorderSpacing.Around = 6
+    BevelOuter = bvNone
+    ClientHeight = 25
+    ClientWidth = 707
+    TabOrder = 1
+    object btnPrint: TButton
+      AnchorSideLeft.Control = btnOpenFile
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = ButtonPanel
+      Left = 89
+      Height = 25
+      Top = 0
+      Width = 75
+      BorderSpacing.Left = 6
+      Caption = 'Print...'
+      TabOrder = 1
+      OnClick = btnPrintClick
+    end
+    object btnPreview: TButton
+      AnchorSideLeft.Control = btnPrint
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = ButtonPanel
+      Left = 170
+      Height = 25
+      Top = 0
+      Width = 75
+      BorderSpacing.Left = 6
+      Caption = 'Preview...'
+      TabOrder = 2
+      OnClick = btnPreviewClick
+    end
+    object btnOpenFile: TButton
+      AnchorSideLeft.Control = ButtonPanel
+      AnchorSideTop.Control = ButtonPanel
+      Left = 0
+      Height = 25
+      Top = 0
+      Width = 83
+      AutoSize = True
+      Caption = 'Open file...'
+      TabOrder = 0
+      OnClick = btnOpenFileClick
+    end
+  end
+  object sWorkbookTabControl1: TsWorkbookTabControl
+    Left = 6
+    Height = 446
+    Top = 6
+    Width = 707
+    TabPosition = tpBottom
+    TabIndex = 0
+    Tabs.Strings = (
+      'Sheet1'
+    )
+    Align = alClient
+    BorderSpacing.Around = 6
+    TabOrder = 0
+    WorkbookSource = sWorkbookSource1
+    object sWorksheetGrid1: TsWorksheetGrid
+      Left = 2
+      Height = 421
+      Top = 2
+      Width = 703
+      FrozenCols = 0
+      FrozenRows = 0
+      PageBreakPen.Color = clBlue
+      PageBreakPen.Style = psDash
+      ReadFormulas = False
+      WorkbookSource = sWorkbookSource1
+      Align = alClient
+      DefaultColWidth = 64
+      DefaultRowHeight = 22
+      TabOrder = 0
+    end
+  end
+  object Bevel1: TBevel
+    Left = 0
+    Height = 3
+    Top = 458
+    Width = 719
+    Align = alBottom
+    Shape = bsBottomLine
+  end
+  object GridPrinter1: TGridPrinter
+    Grid = sWorksheetGrid1
+    Footer.Font.Height = -11
+    Footer.FontSize = 8
+    Header.Font.Height = -11
+    Header.FontSize = 8
+    ShowPrintDialog = gpdPrintDialog
+    Left = 231
+    Top = 142
+  end
+  object GridPrintPreviewDialog1: TGridPrintPreviewDialog
+    FormParams.PixelsPerInch = 96
+    GridPrinter = GridPrinter1
+    Left = 448
+    Top = 142
+  end
+  object sWorkbookSource1: TsWorkbookSource
+    FileFormat = sfUser
+    Options = []
+    Left = 112
+    Top = 142
+  end
+  object OpenDialog1: TOpenDialog
+    Filter = 'All spreadsheet files|*.xls;*.xlsx;*.ods;*.csv|All Excel files (*.xls, *.xlsx)|*.xls;*.xlsx|Excel XML spreadsheet (*.xlsx)|*.xlsx|Excel XP/2003 XML spreadsheet (*.xml)|*.xml|Excel 97-2003 spreadsheets (*.xls)|*.xls|Excel 5 spreadsheet (*.xls)|*.xls|Excel 2.1 spreadsheets (*.xls)|*.xls|LibreOffice/OpenOffice spreadsheet (*.ods)|*.ods|HTML files (*.html; *.htm)|*.html;*.htm|Comma-separated text files (*.csv; *.txt)|*.csv;*.txt'
+    Left = 230
+    Top = 248
+  end
+end

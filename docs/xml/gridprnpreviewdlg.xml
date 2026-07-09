@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fpdoc-descriptions><package name="GridPrinterPkg"><module name="GridPrnPreviewDlg"><element name="TGridPrintPreviewDialog"><short>Class allowing to display a preview of the output of the <var>TGridPrinter</var>
+        </short><seealso><link id="TGridPrinter"/>
+        </seealso>
+      </element><element name="TGridPrintPreviewDialog.Create"><short>Constructor of the <var>TGridPrintPreviewDialog</var> class</short><descr>Creates an instance of the <var>TGridPrintPreviewFormParams</var> class which determines size and position of the dialog window.
+</descr>
+      </element><element name="TGridPrintPreviewDialog.Destroy"><short>Destructor of the <var>TGridPrintPreviewDialog</var> class</short>
+      </element><element name="TGridPrintPreviewDialog.Execute"><short>Displays the preview form. Main method of the component.</short>
+      </element><element name="TGridPrintPreviewDialog.FormParams"><short>Parameters which define size and position of the preview form.</short><seealso><link id="TGridPrintPreviewFormParams"/>
+        </seealso>
+      </element><element name="TGridPrintPreviewDialog.GridPrinter"><short>Links to the <var>TGridPrinter</var> instance which actually performs the printing.</short>
+      </element><element name="TGridPrintPreviewDialog.Options"><short>This property defines the options of the user to modify the preview.</short><descr><ul><li><var>ppoNavigationBtns</var> - Enables/disables page navigation in the preview.</li><li><var>ppoNavigationEdit</var> - Shows/hides the edit control in the preview toolbar with which the user can navigate to a specific page of the preview.</li><li><var>ppoZoomBtns</var> - Enables/disables zooming in the preview.</li><li><var>ppoPageOrientationBtns</var> - Enables/disables selection of page orientation.</li><li><var>ppoMarginsBtn</var> - Enables/disables page margin selection in the preview</li><li><var>ppoHeaderFooterBtn</var> - Enables/disables the possibility to set up the header and footer in a dialog.</li><li><var>ppoPrintOrderBtns</var> - Enables/disables the possibility to define the order of pages when the entire print-out does not fit onto a single page of paper.</li><li><var>ppoCenterBtns</var> - Shows/hides the buttons to center the grid on the printed page.</li><li><var>ppoScalePrinterBtn</var> - Shows/hides the button to scale the printer output manually or to force a given count of pages onto a single sheet.</li><li><var>ppoPageSetupBtn</var> - Shows/hides a toolbar button with a dropdown menu containing options to control the page layout (page orientation, margin selection, etc).</li><li><var>ppoPageNumberInfo</var> - Shows/hides the display of page number and total page count in the preview form.</li><li><var>ppoZoomLevelInfo</var> - Shows/hides the display of the preview zoom level (percentage) in the preview form.</li>
+          </ul>
+        </descr><errors><link id="TGridPrintPreviewOptions"/>
+        </errors>
+      </element><element name="TGridPrintPreviewFormParams"><short>Class administrating the options for the user to modify the preview form.</short><descr><ul><li><var>ppoNavigationBtns</var> - Enables/disables page navigation in the preview.</li><li><var>ppoNavigationEdit</var> - Shows/hides the edit control in the preview toolbar with which the user can navigate to a specific page of the preview.</li><li><var>ppoZoomBtns</var> - Enables/disables zooming in the preview.</li><li><var>ppoPageOrientationBtns</var> - Enables/disables selection of page orientation.</li><li><var>ppoMarginsBtn</var> - Enables/disables page margin selection in the preview</li><li><var>ppoHeaderFooterBtn</var> - Enables/disables the possibility to set up the header and footer in a dialog.</li><li><var>ppoPrintOrderBtns</var> - Enables/disables the possibility to define the order of pages when the entire print-out does not fit onto a single page of paper.</li><li><var>ppoCenterBtns</var> - Shows/hides the buttons to center the grid on the printed page.</li><li><var>ppoScalePrinterBtn</var> - Shows/hides the button to scale the printer output manually or to force a given count of pages onto a single sheet.</li><li><var>ppoPageSetupBtn</var> - Shows/hides a toolbar button with a dropdown menu containing options to control the page layout (page orientation, margin selection, etc).</li><li><var>ppoPageNumberInfo</var> - Shows/hides the display of page number and total page count in the preview form.</li><li><var>ppoZoomLevelInfo</var> - Shows/hides the display of the preview zoom level (percentage) in the preview form.</li>
+          </ul>
+        </descr><seealso><link id="TPrintPreviewDialog"/>
+        </seealso>
+      </element><element name="TGridPrintPreviewDialog.Zoom"><short>Scaling factor, in percent, applied when the preview bitmap is displayed in the preview form. Default: 100.</short>
+      </element><element name="TGridPrintPreviewDialog.ZoomMode"><short> Determines how the preview bitmap is scaled by means of the <var>Zoom</var> scaling factor:</short><descr><ul><li><var>zmCustom</var> - The current value of the Zoom factor is applied directly.</li><li><var>zmFitWidth</var> - The Zoom factor is adjusted so that the page fits horizontally into the preview window.</li><li><var>zmFitHeight</var> - The Zoom factor is adjusted such that the page fits vertically into the preview window.</li>
+          </ul>
+        </descr>
+      </element>
+    </module>
+  </package>
+</fpdoc-descriptions>

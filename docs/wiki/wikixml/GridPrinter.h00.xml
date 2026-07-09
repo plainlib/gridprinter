@@ -1,0 +1,378 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.11/ http://www.mediawiki.org/xml/export-0.11.xsd" version="0.11" xml:lang="en">
+  <siteinfo>
+    <sitename>Lazarus wiki</sitename>
+    <dbname>lazaruswiki</dbname>
+    <base>http://wiki.freepascal.org/Main_Page</base>
+    <generator>MediaWiki 1.35.6</generator>
+    <case>case-sensitive</case>
+    <namespaces>
+      <namespace key="-2" case="case-sensitive">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="case-sensitive" />
+      <namespace key="1" case="case-sensitive">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="case-sensitive">Lazarus wiki</namespace>
+      <namespace key="5" case="case-sensitive">Lazarus wiki talk</namespace>
+      <namespace key="6" case="case-sensitive">File</namespace>
+      <namespace key="7" case="case-sensitive">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="case-sensitive">Template</namespace>
+      <namespace key="11" case="case-sensitive">Template talk</namespace>
+      <namespace key="12" case="case-sensitive">Help</namespace>
+      <namespace key="13" case="case-sensitive">Help talk</namespace>
+      <namespace key="14" case="case-sensitive">Category</namespace>
+      <namespace key="15" case="case-sensitive">Category talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>GridPrinter</title>
+    <ns>0</ns>
+    <id>19438</id>
+    <revision>
+      <id>154824</id>
+      <parentid>154823</parentid>
+      <timestamp>2022-12-12T22:53:44Z</timestamp>
+      <contributor>
+        <username>Wp</username>
+        <id>5796</id>
+      </contributor>
+      <comment>/* Getting Started */</comment>
+      <origin>154824</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="29632" sha1="q4h78wq2qy30qwmkit79blsy1ot5f27" xml:space="preserve">{{GridPrinter}}
+
+==About==
+[[Image:GridPrinter v0.2.0.png|GridPrinter]]
+
+&lt;b&gt;&lt;tt&gt;TGridPrinter&lt;/tt&gt;&lt;/b&gt; is a component to simplify printing of string grids or other descendants of TCustomGrid. It is bundled together with a ready-made print preview dialog, &lt;b&gt;&lt;tt&gt;TGridPrintPreviewDialog&lt;/tt&gt;&lt;/b&gt;, as well as standard actions to trigger printing or to show the preview dialog without writing a single line of code.
+
+Author: Werner Pamler.
+
+License: Modified LGPL-2 (with linking exception, like Lazarus LCL).
+
+==Download and Installation==
+===Release version===
+The package is made available for installation by the Online-Package-Manager. Additionally, a zip file with the most recent release version can be found at [https://sourceforge.net/projects/lazarus-ccr/files/GridPrinter/ Lazarus CCR at SourceForge]; unzip the file into any folder; load the file ''gridprinterpkg.lpk'' into Lazarus and click ''Use'' &gt; ''Install''.
+
+===Development version===
+The current development version is hosted at [https://sourceforge.net/p/lazarus-ccr/svn/HEAD/tree/components/gridprinter/ Lazarus CCR]. Use SVN to check it out, or download the zipped snapshot from this page. Install by loading the ''gridprinterpkg.lpk'' package file into Lazarus and clicking ''Use'' &gt; ''Install''.
+
+==Getting Started==
+====How can I print a StringGrid?====
+Nothing easier when you have the GridPrinter package...
+* Drop a &lt;tt&gt;TGridPrinter&lt;/tt&gt; component on the form.
+* Link its &lt;tt&gt;Grid&lt;/tt&gt; property to the StringGrid that you want to print.
+* In the &lt;tt&gt;OnClick&lt;/tt&gt; handler of the button or menu item that is supposed to start the print-out, call the &lt;tt&gt;Print&lt;/tt&gt; method of the &lt;tt&gt;GridPrinter&lt;/tt&gt;. That's all.
+&lt;syntaxhighlight lang=Pascal&gt;
+procedure TForm1.PrintButtonClick(Sender: TObject);
+begin
+  GridPrinter1.Print;
+end;&lt;/syntaxhighlight&gt;
+
+====How can I see a preview of the printout before the printer starts to waste paper?====
+* Drop also a &lt;tt&gt;TGridPrintPreviewDialog&lt;/tt&gt; on the form.
+* Links its &lt;tt&gt;GridPrinter&lt;/tt&gt; property to the GridPrinter instance that you had added in the previous exercise.
+* In the &lt;tt&gt;OnClick&lt;/tt&gt; handler of the button or menu item that is supposed to show the preview, call the &lt;tt&gt;Execute&lt;/tt&gt; method of the &lt;tt&gt;GridPrintPreviewDialog&lt;/tt&gt;.
+* In the preview dialog you can scroll through the pages, zoom to various levels, change page orientation, adjust the page margins by dragging with the mouse, or add a header and/or footer. Of course, you can also print here, too.
+&lt;syntaxhighlight lang=Pascal&gt;
+procedure TForm1.PrintPreviewButtonClick(Sender: TObject);
+begin
+  GridPrintPreviewDialog1.Execute;
+end;&lt;/syntaxhighlight&gt;
+
+====I have several printers and want to make sure that the print-out goes to the right one====
+&lt;tt&gt;TGridPrinter&lt;/tt&gt; has a property &lt;tt&gt;ShowPrintDialog&lt;/tt&gt; which controls whether a print dialog should be displayed before printing starts. The kind of dialog is determined by the following options:
+* &lt;tt&gt;gpdNone&lt;/tt&gt;: no print dialog
+* &lt;tt&gt;gpdPageSetup&lt;/tt&gt;: shows a &lt;tt&gt;TPageSetupDialog&lt;/tt&gt;. Here you can select the paper size and set page orientation as well as page margins.
+* &lt;tt&gt;gpdPrintDialog&lt;/tt&gt;: shows a &lt;tt&gt;TPrintDialog&lt;/tt&gt; where you can select the printer, the number of copies and the range of printed pages.
+* &lt;tt&gt;gpdPrinterSetup&lt;/tt&gt;: shows &lt;tt&gt;TPrinterSetupDialog&lt;/tt&gt;. Here you can select the printer, the paper size and the page orientation.
+
+====Can individual cell formatting by the OnPrepareCanvas event be applied to the printout?====
+Yes. The &lt;tt&gt;TGridPrinter&lt;/tt&gt; fires an &lt;tt&gt;OnPrepareCanvas&lt;/tt&gt; event, too. Both even can share the same event handler. You only should be careful to use the correct &lt;tt&gt;Canvas&lt;/tt&gt; when handling the event: When the &lt;tt&gt;Sender&lt;/tt&gt; of the event is the grid, you must refer to the grid's &lt;tt&gt;Canvas&lt;/tt&gt;, and when the &lt;tt&gt;Sender&lt;/tt&gt; is the &lt;tt&gt;GridPrinter&lt;/tt&gt; you must use that &lt;tt&gt;Canvas&lt;/tt&gt; exposed by the &lt;tt&gt;GridPrinter&lt;/tt&gt;; during printing this is the printer's &lt;tt&gt;Canvas&lt;/tt&gt;, and when the preview is painted it is the &lt;tt&gt;Canvas&lt;/tt&gt; of a temporary &lt;tt&gt;TBitmap&lt;/tt&gt;.
+
+Let's assume that your &lt;tt&gt;OnPrepareCanvas&lt;/tt&gt; handler is supposed to paint the column title in bold type face. This could be done by the following code. The procedure must be assigned to the &lt;tt&gt;OnPrepareCanvas&lt;/tt&gt; of both grid and &lt;tt&gt;GridPrinter&lt;/tt&gt;.
+&lt;syntaxhighlight lang=Pascal&gt;
+procedure TForm1.PrepareCanvasHandler(Sender: TObject; ACol, ARow: Integer; AState: TGridDrawState);
+var
+  lCanvas: TCanvas;
+begin
+  if Sender = StringGrid1 then
+    lCanvas := StringGrid1.Canvas
+  else
+  if Sender = GridPrinter1 then
+    lCanvas := GridPrinter1.Canvas
+  else
+    raise Exception.Create('Unknown sender of OnPrepareCanvas.');
+
+  if ARow &lt; StringGrid1.FixedRows then
+    lCanvas.Font.Style := [fsBold];
+end;
+&lt;/syntaxhighlight&gt;
+
+====Can I print a DBGrid?====
+Yes, but it requires a bit more work than just connecting it to the &lt;tt&gt;Grid&lt;/tt&gt; property of the &lt;tt&gt;GridPrinter&lt;/tt&gt;. A &lt;tt&gt;DBGrid&lt;/tt&gt; displays data from a &lt;tt&gt;TDataset&lt;/tt&gt;, but it keeps only a small number of records. But you usually want to print the entire dataset, rather than just the section loaded into the &lt;tt&gt;DBGrid&lt;/tt&gt;. 
+
+At first we must tell the &lt;tt&gt;GridPrinter&lt;/tt&gt; how many rows it will have to print. This can be done by providing a handler for the event &lt;tt&gt;OnGetRowCount&lt;/tt&gt; in which we pass the dataset's &lt;tt&gt;RecordCount&lt;/tt&gt; value to the provided parameter. Note that the title row must be included here. Note also that the &lt;tt&gt;RecordCount&lt;/tt&gt; property often is only correct after the dataset pointer has been moved to the last record and back to the first record.
+
+&lt;syntaxhighlight lang=Pascal&gt;
+procedure TForm1.GridPrinter1GetRowCount(Sender: TObject; AGrid: TCustomGrid;
+  var ARowCount: Integer);
+var
+  dbGrid: TDBGrid;
+begin
+  dbGrid := AGrid as TDBGrid;
+  dbGrid.Datasource.Dataset.Last;
+  dbGrid.Datasource.Dataset.First;
+  ARowCount := dbGrid.Datasource.Dataset.RecordCount + 1;  // we must 1 for the header row
+end; 
+&lt;/syntaxhighlight&gt;
+
+In order to provide the cell texts for the GridPrinter we must write a handler for the &lt;tt&gt;OnGetCellText&lt;/tt&gt; event which is fired whenever the GridPrinter needs any cell text. We will return to this in a minute. We must first clarify the process flow. The easiest way to get the cell texts is by iterating over the entire dataset. Provide a handler for the &lt;tt&gt;OnBeforePrint&lt;/tt&gt; event which moves the dataset to its first record:
+
+&lt;syntaxhighlight lang=Pascal&gt;
+procedure TForm1.GridPrinter1BeforePrint(Sender: TObject);
+begin
+  DBGrid1.DataSource.Dataset.First;
+end;
+&lt;/syntaxhighlight&gt;
+
+Another event, &lt;tt&gt;OnNewLine&lt;/tt&gt; fires when the &lt;tt&gt;GridPrinter&lt;/tt&gt; has finished printing a line and wants to proceed with the next one. This means we must advance the dataset to its next record. However, if a printed line extends over several pages we must be able to return to this record for completing its printout on the next page. Generally this must be handled by setting bookmarks - please see the example ''dbgrid2'' in the &lt;tt&gt;GridPrinter&lt;/tt&gt; installation folder for details. For some flat-file databases such as ''dBase'', ''BufDataset'' etc. there is a simpler way by using the &lt;tt&gt;RecNo&lt;/tt&gt; property of the dataset. This is a running number for each record starting at 1 with the first record. So, in the &lt;tt&gt;OnNewLine&lt;/tt&gt; event we simply set the dataset's &lt;tt&gt;RecNo&lt;/tt&gt; to the row parameter passed to the event:
+
+&lt;syntaxhighlight lang=Pascal&gt;
+procedure TForm1.GridPrinter1NewLine(Sender: TObject; AGrid: TCustomGrid;
+  ARow: Integer);
+var
+  dbGrid: TDBGrid;
+begin
+  dbGrid := AGrid as TDBGrid;
+  BufDataset1.RecNo := ARow;  // RecNo starts at 1. ARow starts at 1, too, since we display the header row   
+end;
+&lt;/syntaxhighlight&gt;
+
+Then, within each row, the &lt;tt&gt;GridPrinter&lt;/tt&gt; proceeds from grid column to grid column. In order to extract the cell text, we determine the column &lt;tt&gt;col&lt;/tt&gt; from the &lt;tt&gt;ACol&lt;/tt&gt; parameter of the &lt;tt&gt;OnGetCellText&lt;/tt&gt;event and thus have access to the dataset field in that column (&lt;tt&gt;col.Field&lt;/tt&gt;). Finally, we can query the cell text by calling the field's &lt;tt&gt;AsString&lt;/tt&gt; method. Special handling is required for the very first row (&lt;tt&gt;ARow = 0&lt;/tt&gt;) which corresponds to the grid titles:
+&lt;syntaxhighlight lang=Pascal&gt;
+procedure TForm1.GridPrinter1GetCellText(Sender: TObject; AGrid: TCustomGrid;
+  ACol, ARow: Integer; var AText: String);
+var
+  dbGrid: TDBGrid;
+  col: TColumn;
+  colOffs: Integer;
+begin
+  AText := '';
+
+  dbGrid := AGrid as TDBGrid;
+
+  if (dgIndicator in dbGrid.Options) then
+    colOffs := 1
+  else
+    colOffs := 0;
+
+  if ACol &lt; colOffs then
+    exit;
+
+  col := dbGrid.Columns[ACol - colOffs];
+
+  if (ARow = 0) then
+    AText := col.FieldName
+  else
+    AText := col.Field.AsString;
+end; &lt;/syntaxhighlight&gt;
+
+As already mentioned, there are &lt;tt&gt;DBGrid&lt;/tt&gt; sample projects in the &lt;tt&gt;GridPrinter&lt;/tt&gt; installation to demonstrate the steps for &lt;tt&gt;DBGrid&lt;/tt&gt; printing.
+
+====How can I print a page number?====
+You can print a page number at the top or bottom of every page by activating the header or footer of the &lt;tt&gt;GridPrinter&lt;/tt&gt;. For this you select the &lt;tt&gt;Header&lt;/tt&gt; (or &lt;tt&gt;Footer&lt;/tt&gt; property and switch is &lt;tt&gt;Visible&lt;/tt&gt; property to &lt;tt&gt;true&lt;/tt&gt;. Then you enter the header (or footer) text in the property &lt;tt&gt;Text&lt;/tt&gt;. In order to print the page number use for it the symbol &lt;tt&gt;$PAGE&lt;/tt&gt; which is replaced by the number of the currently printed page. Note that the header/footer text consists of a left-aligned, centered and right-aligned part separated by a &lt;tt&gt;'|'&lt;/tt&gt; character. So, if you want the page number to be centered the &lt;tt&gt;Text&lt;/tt&gt; should be &lt;tt&gt;'|$PAGE|'&lt;/tt&gt;, and if you want to include the total page count you could use '|$PAGE of $PAGECOUNT|'. Learn about the other symbols in the [[#TGridPrnHeaderFooter|documentation section below]].
+
+== Documentation ==
+
+=== TGridPrinter ===
+
+==== Public methods ====
+* &lt;tt&gt;function CreatePreviewBitmap(APageNo, APercentage: Integer): TBitmap&lt;/tt&gt; -- Creates the preview bitmap for the printout of the specified page. The bitmap is scaled by the given percentage relative to the original pager size (100).
+* &lt;tt&gt;function GetCellText(ACol, ARow: Integer): String&lt;/tt&gt; -- Returns the text to be printed for the grid cell at the given row and column indices.
+* &lt;tt&gt;procedure Print&lt;/tt&gt; -- Prints the grid. '''Main method of the component'''.
+* &lt;tt&gt;procedure ScaleToPages(NumHor, NumVert: Integer)&lt;/tt&gt; -- Scales the printout such that it fits on &lt;tt&gt;NumHor&lt;/tt&gt; pages horizontally and &lt;tt&gt;NumVert&lt;/tt&gt; pages vertically. When &lt;tt&gt;NumHorPages&lt;/tt&gt; is 0 (or smaller) only the height is scaled according to &lt;tt&gt;NumVert&lt;/tt&gt;. Similarly when &lt;tt&gt;NumVert&lt;/tt&gt; is 0 (or smaller).
+* &lt;tt&gt;function ScaleX(AValue: Integer): Integer&lt;/tt&gt; -- General scaling function for conversion of horizontal screen pixels to pixels on the printer or the preview bitmap.
+* &lt;tt&gt;function ScaleY(AValue: Integer): Integer&lt;/tt&gt; -- General scaling function for conversion of vertical screen pixels to pixels on the printer or the preview bitmap.
+* &lt;tt&gt;procedure UpdatePreview&lt;/tt&gt; -- Fires the event &lt;tt&gt;OnUpdatePreview&lt;/tt&gt; if the &lt;tt&gt;GridPrinter&lt;/tt&gt; is in preview mode.
+
+==== Public properties ====
+* &lt;tt&gt;Canvas: TCanvas&lt;/tt&gt; (read-only) -- Canvas currently used by the &lt;tt&gt;GridPrinter&lt;/tt&gt;. This is either the printer canvas or the canvas of the preview bitmap sent to the &lt;tt&gt;TGridPrintPreview&lt;/tt&gt; component.
+* &lt;tt&gt;ColCount: Integer&lt;/tt&gt; (read-only) -- Number of columns to be printed (including fixed columns).
+* &lt;tt&gt;ColWidth[AIndex: Integer]: Double&lt;/tt&gt; (read-only) -- Width of the specified column, given in pixels of the current output device (printer or preview bitmap).
+* &lt;tt&gt;FooterMargin: Integer&lt;/tt&gt; (read-only) -- Distance of the footer bottom from the page bottom, in pixels of the current output device.
+* &lt;tt&gt;HeaderMargin: Integer&lt;/tt&gt; -- Distance of the header top from the page top, in pixels of the current output device.
+* &lt;tt&gt;PageHeight: Integer&lt;/tt&gt; (read-only) -- Height of the page, in pixels of the current output device.
+* &lt;tt&gt;PageWidth: Integer&lt;/tt&gt; (read-only) -- Width of the page, in pixels of the current output device.
+* &lt;tt&gt;PageRect: TRect&lt;/tt&gt; (read-only) -- Rectangle on the page, in pixels of the current output device, available for printing the grid. In other words: size of the page with margins subtracted.
+* &lt;tt&gt;PixelsPerInchX: Integer&lt;/tt&gt; (read-only) -- Pixel density of the current output device, in horizontal direction.
+* &lt;tt&gt;PixelsPerInchY: Integer&lt;/tt&gt; (read-only) -- Pixel density of the current output device, in vertical direction.
+* &lt;tt&gt;Padding: Integer&lt;/tt&gt; (read-only) -- Distance, in pixels of the current output device, between cell text and cell border.
+* &lt;tt&gt;PageCount: Integer&lt;/tt&gt; (read-only) -- Total number of pages to be printed.
+* &lt;tt&gt;PrintPageNumber: Integer&lt;/tt&gt; (read-only) -- Number of the page which is currently printed. Pages numbers begin with &lt;tt&gt;'1'&lt;/tt&gt;.
+* &lt;tt&gt;PrintScaleToNumHorPages: Integer&lt;/tt&gt; -- The &lt;tt&gt;PrintScalingFactor&lt;/tt&gt; is adjusted such that this number of grid pages fits onto a single sheet of paper horizontally.
+* &lt;tt&gt;PrintScaleToNumVertPages: Integer&lt;/tt&gt; -- The &lt;tt&gt;PrintScalingFactor&lt;/tt&gt; is adjusted such that this number of grid pages fits onto a single sheet of paper vertically.
+* &lt;tt&gt;PrintScalingMode: TGridPrnScalingMode&lt;/tt&gt; -- Determines how the print output is scaled.
+** &lt;tt&gt;smManual&lt;/tt&gt; -- The current value of the &lt;tt&gt;PrintScalingFactor&lt;/tt&gt; is applied.
+** &lt;tt&gt;smFitToWidth&lt;/tt&gt; -- The &lt;tt&gt;PrintScalingFactor&lt;/tt&gt; is adjusted so that the number of grid pages given by &lt;tt&gt;PrintScaleToNumVertPages&lt;/tt&gt; fit onto a single page vertically.
+** &lt;tt&gt;smsmFitToHeight&lt;/tt&gt; -- The &lt;tt&gt;PrintScalingFactor&lt;/tt&gt; is adjusted so that the number of grid pages given by &lt;tt&gt;PrintScaleToNumHorPages&lt;/tt&gt; fit onto a single page horizontally.
+** &lt;tt&gt;smFitAll&lt;/tt&gt; -- The &lt;tt&gt;PrintScalingFactor&lt;/tt&gt; is adjusted so that the entire grid fits onto a single page.
+* &lt;tt&gt;RowCount: Integer&lt;/tt&gt; (read-only) -- Number of rows to be printed (including fixed rows).
+* &lt;tt&gt;RowHeight[AIndex: Integer]: Double&lt;/tt&gt; (read-only) -- Height of the specified row, given in pixels of the current output device.
+
+==== Published properties and events ====
+'''Properties'''
+* &lt;tt&gt;Grid: TCustomGrid&lt;/tt&gt; --  Links to the grid to be printed. Ideally, this should be a &lt;tt&gt;TStringGrid&lt;/tt&gt;, but other descendants of &lt;tt&gt;TCustomGrid&lt;/tt&gt; can be printed as well when the appropriate event handlers are provided.
+* &lt;tt&gt;BorderLineColor: TColor&lt;/tt&gt; -- Line color of the outer border of the printed grid.
+* &lt;tt&gt;BorderLineWidth: Double&lt;/tt&gt; -- Line width of the outer border of the printed grid, in millimeters. If negative, the scaled value of the grid's &lt;tt&gt;GridLineWidth&lt;/tt&gt; is used.
+* &lt;tt&gt;FileName: String&lt;/tt&gt; -- Has no functional use inside the &lt;tt&gt;GridPrinter&lt;/tt&gt;. But indicates the name of the file which is printed, if applicable. The filename is displayed in the header or footer of the printout/preview where it is used to replace the symbols &lt;tt&gt;$FULL_FILENAME&lt;/tt&gt;, &lt;tt&gt;$FILENAME&lt;/tt&gt;, &lt;tt&gt;$PATH&lt;/tt&gt; in the header/footer &lt;tt&gt;Text&lt;/tt&gt;.
+* &lt;tt&gt;FixedLineColor: TColor&lt;/tt&gt; -- Line color of the dividing line between fixed and normal cells in the printout/preview.
+* &lt;tt&gt;FixedLineWidth: Double&lt;/tt&gt; -- Line width of the dividing line between fixed and normal cells in the printout/preview, in millimeters. If negative, the scaled value of the grid's &lt;tt&gt;GridLineWidth&lt;/tt&gt; is used.
+* &lt;tt&gt;Footer: TGridPrnHeaderFooter&lt;/tt&gt; -- Parameters for printing a footer at the bottom of each page. See [[#TGridPrnHeaderFooter|TGridPrnHeaderFooter]].
+* &lt;tt&gt;FromPage: Integer&lt;/tt&gt; -- Defines the first page to be printed. Any value less than 1 is interpreted as "first page".
+* &lt;tt&gt;GridLineColor: TColor&lt;/tt&gt; -- Color of the inner grid lines.
+* &lt;tt&gt;GridLineWidth: Double&lt;/tt&gt; -- Line width of the inner grid lines, in millimeters. If negative, the scaled value of the grid's &lt;tt&gt;GridLineWidth&lt;/tt&gt; is used.
+* &lt;tt&gt;Header: TGridPrnHeaderFooter&lt;/tt&gt; -- Parameters for printer a header at the top of each page. See [[#TGridPrnHeaderFooter|TGridPrnHeaderFooter]]
+* &lt;tt&gt;Margins: TGridPrnMargins&lt;/tt&gt; -- Defines page and header/footer margins, in millimeters. See [[#TGridPrnMargins|TGridPrnMargins]].
+* &lt;tt&gt;Monochrome: Boolean&lt;/tt&gt; -- Prints the grid only with black color.
+* &lt;tt&gt;Options: TGridPrnOptions&lt;/tt&gt; -- Options for fine-tuning the printout:
+** &lt;tt&gt;gpoCenterHor&lt;/tt&gt; -- Centers the printed table on the page horizontally.
+** &lt;tt&gt;gpoCenterVert&lt;/tt&gt; -- Centers the printed table on the page vertically.
+** &lt;tt&gt;gpoHorGridLines&lt;/tt&gt; -- Overrides the corresponding grid option and can be used to show/hide horizontal grid lines between the printed rows.
+** &lt;tt&gt;gpoVertGridLines&lt;/tt&gt; -- Overrides the corresponding grid option and can be used to show/hide vertical grid lines between the printed columns.
+** &lt;tt&gt;gpoFixedHorGridLines&lt;/tt&gt; -- Can be used to show/hide horizontal grid lines between the fixed cells.
+** &lt;tt&gt;gpoFixedVertGridLines&lt;/tt&gt; -- Can be used to show/hide vertical grid lines between the fixed cells.
+** &lt;tt&gt;gpoHeaderBorderLines&lt;/tt&gt; -- Can be used to show/hide dividing lines between the fixed and normal cells.
+** &lt;tt&gt;gpoOuterBorderLines&lt;/tt&gt; -- Can be used to show/hide outer lines around the grid.
+* &lt;tt&gt;Orientation: TPrinterOrientation&lt;/tt&gt; -- Defines the page orientation: &lt;tt&gt;poPortrait&lt;/tt&gt;, &lt;tt&gt;poLandscape&lt;/tt&gt;, &lt;tt&gt;poReverseLandscape&lt;/tt&gt;, &lt;tt&gt;poReversePortrait&lt;/tt&gt; (declared in the ''Printers'' unit).
+* &lt;tt&gt;PrintOrder: TGridPrnOrder&lt;/tt&gt; -- Large grids are wrapped into several pages. This property defines whether rows (&lt;tt&gt;poRowsFirst&lt;/tt&gt;) or columns (&lt;tt&gt;poColsFirst&lt;/tt&gt;) will be completed first.
+* &lt;tt&gt;PrintScaleFactor: Double&lt;/tt&gt; -- caling factor for the printout. Default: &lt;tt&gt;1.0&lt;/tt&gt;. Call the method &lt;tt&gt;ScaleToPages()&lt;/tt&gt; if you want to adjust the &lt;tt&gt;PrintScaleFactor&lt;/tt&gt; such that the entire printout fits on a given number of pages.
+* &lt;tt&gt;ShowPrintDialog: TGridPrnDialog&lt;/tt&gt; -- Determines whether one of the Lazarus print dialog should be shown before printing begins: &lt;tt&gt;gpdNone&lt;/tt&gt;, &lt;tt&gt;gpdPageSetup&lt;/tt&gt;, &lt;tt&gt;gpdPrintDialog&lt;/tt&gt;, &lt;tt&gt;gpdPrinterSetup&lt;/tt&gt;.
+* &lt;tt&gt;ToPage: Integer&lt;/tt&gt; -- Defines the last page to be printed. Any value larger than the real page count prints to the last page.
+
+'''Events'''
+* &lt;tt&gt;OnAfterPrint&lt;/tt&gt; -- Fires when printing is finished.
+* &lt;tt&gt;OnBeforePrint&lt;/tt&gt; -- Fires before printing begins. The printer has not yet received its &lt;tt&gt;BeginDoc&lt;/tt&gt; command.
+* &lt;tt&gt;OnGetCellText&lt;/tt&gt; -- Whenever the &lt;tt&gt;GridPrinter&lt;/tt&gt; needs to know the text in a specific cell it sends this event. The text to be printed can be passed in a parameter. This way non-standard grid which have different cell technology can be printed as well.
+* &lt;tt&gt;OnGetRowCount&lt;/tt&gt; -- In this event the application can tell the &lt;tt&gt;GridPrinter&lt;/tt&gt; the number of rows to be printed. This is useful when a &lt;tt&gt;DBGrid&lt;/tt&gt; which holds only a small parts of all rows of a dataset.
+* &lt;tt&gt;OnGetColCount&lt;/tt&gt; -- Similar to &lt;tt&gt;OnGetRowCount&lt;/tt&gt;, just for columns, rather than rows.
+* &lt;tt&gt;OnLinePrinted&lt;/tt&gt; -- Fires when the &lt;tt&gt;GridPrinter&lt;/tt&gt; has finished printing a specific line.
+* &lt;tt&gt;OnNewLine&lt;/tt&gt; -- Fires when the &lt;tt&gt;GridPrinter&lt;/tt&gt; starts printing a new line of cells.
+* &lt;tt&gt;OnNewPage&lt;/tt&gt; -- Fires when the &lt;tt&gt;GridPrinter&lt;/tt&gt; begins a new page.
+* &lt;tt&gt;OnPrepareCanvas&lt;/tt&gt; -- Similar to the equally-named event of the grid. When the canvas for printing a cell has been prepared the user has the opportunity here to override the selection of colors, fonts, alignments etc. The handler can be shared between grid and &lt;tt&gt;GridPrinter&lt;/tt&gt;, it only must be guaranteed that the correct canvas is used in the code.
+* &lt;tt&gt;OnPrintCell&lt;/tt&gt; -- When this event has a handler it completely replaces the built-in code for printing a cell. Can be used for printing very specific grids.
+* &lt;tt&gt;OnUpdatePreview&lt;/tt&gt; -- When the &lt;tt&gt;GridPrinter&lt;/tt&gt; runs in preview mode the application can be notified, for example, when some parameter has been changed and the preview can repaint itself.
+
+===== TGridPrnHeaderFooter =====
+This is the class of the header and footer lines which can be printed at the top and bottom of each page.
+
+'''Published properties'''
+* &lt;tt&gt;Font: TFont&lt;/tt&gt; -- Font used for printing the header/footer.
+* &lt;tt&gt;LineColor: TColor&lt;/tt&gt; -- Color of the dividing line printed below the header/above the footer.
+* &lt;tt&gt;LineWidth: Double&lt;/tt&gt; -- Line width of the dividing line printed below the header/above the footer, in millimeters.
+* &lt;tt&gt;SectionSeparator: String&lt;/tt&gt; -- The header/footer text can consist of a left-aligned, centered, and a right-aligned part, all specified together in the &lt;tt&gt;Text&lt;/tt&gt;property. Defines the separator character or string between these three sections, default: &lt;tt&gt;'|'&lt;/tt&gt;.
+* &lt;tt&gt;ShowLine: Boolean&lt;/tt&gt; -- Shows/hides the dividing line printed below the header/above the footer.
+* &lt;tt&gt;Text: String&lt;/tt&gt; -- Contains the text to be displayed in the header/footer. It can consist of up to three sections, separated by the &lt;tt&gt;SectionSeparator&lt;/tt&gt;, which are printed at the left, in the center or at the right end of the header/footer. Moreover, the &lt;tt&gt;Text&lt;/tt&gt; can contain the following symbols which are replaced during printing by the current values:
+** &lt;tt&gt;$DATE&lt;/tt&gt; -- Replaced by current date.
+** &lt;tt&gt;$PAGECOUNT&lt;/tt&gt; -- Total number of pages to be printed.
+** &lt;tt&gt;$PAGE&lt;/tt&gt; -- Number of the currently printed page. First page number is &lt;tt&gt;1&lt;/tt&gt;.
+** &lt;tt&gt;$FULL_FILENAME&lt;/tt&gt; -- Is replaced by the full path of the &lt;tt&gt;FileName&lt;/tt&gt; property of the &lt;tt&gt;GridPrinter&lt;/tt&gt;.
+** &lt;tt&gt;$FILENAME&lt;/tt&gt; -- Is replaced by the &lt;tt&gt;FileName&lt;/tt&gt; property of the &lt;tt&gt;GridPrinter&lt;/tt&gt; after removal of the file path.
+** &lt;tt&gt;$PATH&lt;/tt&gt; -- Is replaced by the path to the &lt;tt&gt;FileName&lt;/tt&gt; property of the &lt;tt&gt;GridPrinter&lt;/tt&gt;.
+** &lt;tt&gt;$TIME&lt;/tt&gt; -- Replaced by current time.
+* &lt;tt&gt;Visible: Boolean&lt;/tt&gt; -- Shows/hides the header/footer.
+
+'''Public properties'''
+* &lt;tt&gt;ProcessedText[AIndex: TGridPrnHeaderFooterSection]: String&lt;/tt&gt; where &lt;tt&gt;TGridPrnHeaderFooterSection = (hfsLeft, hfsCenter, hfsRight)&lt;/tt&gt; -- returns the header/footer text in the specified section after replacement of the symbols.
+* &lt;tt&gt;SectionText[AIndex: TGridPrnHeaderFooterSection]: String&lt;/tt&gt; where &lt;tt&gt;TGridPrnHeaderFooterSection = (hfsLeft, hfsCenter, hfsRight)&lt;/tt&gt; -- returns the specified section &lt;tt&gt;Text&lt;/tt&gt;.
+
+===== TGridPrnMargins =====
+This class collects the parameters for the page margins:
+
+'''Published properties'''
+* &lt;tt&gt;Left: Double&lt;/tt&gt; -- Left margin, in millimeters.
+* &lt;tt&gt;Top: Double&lt;/tt&gt; -- Top margin, in millimeters.
+* &lt;tt&gt;Right: Double&lt;/tt&gt; -- Right margin, in millimeters.
+* &lt;tt&gt;Bottom: Double&lt;/tt&gt; -- Bottom margin, in millimeters.
+* &lt;tt&gt;Header: Double&lt;/tt&gt; -- Margin to the top of the header, in millimeters. Note that it is not checked that the header does not overlap with the grid.
+* &lt;tt&gt;Footer: Double&lt;/tt&gt; -- Margin to the bottom of the footer, in millimeters. Note that it is not checked that the footer does not overlap with the grid.
+
+=== TGridPrintPreviewDialog ===
+
+In unit ''GridPrnPreviewDlg''.
+
+==== Public methods ====
+* &lt;tt&gt;procedure Execute&lt;/tt&gt; -- Displays the preview form '''(Main method of the component)'''.
+
+==== Published properties ====
+* &lt;tt&gt;FormParams: TGridPrintPreviewFormParams&lt;/tt&gt; -- Parameters which define size and position of the preview form. See [[#TGridPrintPreviewFormParams|TGridPrintPreviewFormParams]].
+* &lt;tt&gt;GridPrinter: TGridPrinter&lt;/tt&gt; -- Links to the &lt;tt&gt;TGridPrinter&lt;/tt&gt; instance which actually performs the printing.
+* &lt;tt&gt;Options: TGridPrintPreviewOptions&lt;/tt&gt; -- Controls the options the user has to modify the preview (declared in unit ''GridPrnPreviewForm'':
+** &lt;tt&gt;ppoNavigationBtns&lt;/tt&gt; -- Enables/disables page navigation in the preview.
+** &lt;tt&gt;ppoNavigationEdit&lt;/tt&gt; -- Whows/hides the edit control in the preview toolbar with which the user can navigate to a specific page of the preview.
+** &lt;tt&gt;ppoZoomBtns&lt;/tt&gt; -- Enables/disables zooming in the preview.
+** &lt;tt&gt;ppoPageOrientationBtns&lt;/tt&gt; -- Enables/disables selection of page orientation.
+** &lt;tt&gt;ppoMarginsBtn&lt;/tt&gt; -- Enables/disables page margin selection in the preview.
+** &lt;tt&gt;ppoHeaderFooterBtn&lt;/tt&gt; -- Enables/disables the possibility to set up the header and footer in a dialog.
+** &lt;tt&gt;ppoPrintOrderBtns&lt;/tt&gt; -- Enables/disables the possibility to define the order of pages when the entire print-out does not fit onto a single page of paper.
+** &lt;tt&gt;ppoCenterBtns&lt;/tt&gt; -- Shows/hides the buttons to center the grid on the printed page.
+** &lt;tt&gt;ppoScalePrinterBtn&lt;/tt&gt; -- shows/hides the button to scale the printer output manually or to force a given count of pages onto a single sheet.
+** &lt;tt&gt;ppoPageSetupBtn&lt;/tt&gt; -- Shows/hides a toolbar button with a dropdown menu containing options to control the page layout (page orientation, margin selection, etc).
+** &lt;tt&gt;ppoPageNumberInfo&lt;/tt&gt; -- Shows/hides the display of page number and total page count in the preview form.
+** &lt;tt&gt;ppoZoomLevelInfo&lt;/tt&gt; -- Shows/hides the display of the preview zoom level (percentage) in the preview form.
+* &lt;tt&gt;Zoom: Integer&lt;/tt&gt; -- Scaling factor, in percent, applied when the preview bitmap is displayed in the preview form. Default: &lt;tt&gt;100&lt;/tt&gt;.
+* &lt;tt&gt;ZoomMode: TGridPrintPreviewZoomMode&lt;/tt&gt; - Determines how the preview bitmap is scaled by means of the &lt;tt&gt;Zoom&lt;/tt&gt; scaling factor:
+** &lt;tt&gt;zmCustom&lt;/tt&gt; -- The current value of the &lt;tt&gt;Zoom&lt;/tt&gt; factor is applied directly.
+** &lt;tt&gt;zmFitWidth&lt;/tt&gt; -- The &lt;tt&gt;Zoom&lt;/tt&gt; factor is adjusted so that the page fits horizontally into the preview window.
+** &lt;tt&gt;zmFitHeight&lt;/tt&gt; -- The &lt;tt&gt;Zoom&lt;/tt&gt; factor is adjusted such that the page fits vertically into the preview window.
+
+===== TGridPrintPreviewFormParams =====
+* &lt;tt&gt;Left: Integer&lt;/tt&gt; -- Position of the left edge of the preview form on the screen, in screen pixels.
+* &lt;tt&gt;Top: Integer&lt;/tt&gt; -- Position of the top edge of the preview form on the screen, in screen pixels.
+* &lt;tt&gt;Width: Integer&lt;/tt&gt; -- Width of the preview form, in screen pixels.
+* &lt;tt&gt;Height: Integer&lt;/tt&gt; -- Height of the preview form, in screen pixels.
+* &lt;tt&gt;Position: TPosition&lt;/tt&gt; -- Standard LCL form position options overriding the other parameters in the &lt;tt&gt;GridPrintPreviewFormParams&lt;/tt&gt;, e.g. &lt;tt&gt;poMainFormCenter&lt;/tt&gt; or &lt;tt&gt;poScreenCenter&lt;/tt&gt; to center the form over the mainform or on the screen, respectively.
+
+==== Functionality of the preview form ====
+The preview dialog contains a toolbar with a variety of buttons. By means of the &lt;tt&gt;Options&lt;/tt&gt; of the &lt;tt&gt;GridPrintPreviewDialog&lt;/tt&gt; it is possible to hide those buttons which are not needed. 
+
+Here is a description of what the buttons can be used for:
+
+* [[image:gridprn_print.png]] Sends the grid to the printer, as displayed by the preview.
+* [[image:gridprn_firstpage.png]] Displays the first page of the preview.
+* [[image:gridprn_prevpage.png]] Displays the previous page of the preview.
+* [[image:gridprn_nextpage.png]] Displays the next page of the preview.
+* [[image:gridprn_lastpage.png]] Displays the last page of the preview.
+* [[image:gridprn_zoomin.png]] Enlarges the preview ("zoom in").
+* [[image:gridprn_zoomout.png]] Reduces the preview ("zoom out").
+* [[image:gridprn_zoom100.png]] Original size of the preview page (100%).
+* [[image:gridprn_zoomtowidth.png]] Scales the preview image so that it fills the width of the preview window.
+* [[image:gridprn_zoomtoheight.png]] Scales the preview image so that it fills the height of the preview window.
+* [[image:gridprn_portrait.png]] Switches the page to portrait orientation.
+* [[image:gridprn_landscape.png]] Switches the page to landscape orientation.
+* [[image:gridprn_headerfooter.png]] Shows a dialog to set up the header and/or footer of the printout.
+* [[image:gridprn_pagemargins.png]] Displays the page margins as lines. Drag these lines to adjust the margins.
+* [[image:gridprn_rowsfirst.png]] In case of large grids the rows are printed first before advancing to the next block of rows.
+* [[image:gridprn_colsfirst.png]] In case of large grids the columns are printed first before advancing to the next block of columns.
+* [[image:gridprn_centerhor.png]] Centers the grid on the printed page horizontally.
+* [[image:gridprn_centervert.png]] Centers the grid on the printed page vertically.
+* [[image:gridprn_scaleprinter.png]] Opens a dialog in which a scale factor for the printout can be defined. This way, for example, a large grid can be "squeezed" onto a single page.
+* [[image:gridprn_pagesetup.png]] Opens a dropdown menu with a collection of the commandsabove. This is useful when not all buttons are shown on the toolbar.
+
+The icons displayed on these buttons are taken from the Lazarus general-purpose image collection provided by [https://www.rhsoft.de/ Roland Hahn].
+
+=== GridPrinter Actions ===
+Unit ''GridPrnActions'' implements two standard actions for further simplification of usage
+
+==== TGridPrinterAction ====
+When its property &lt;tt&gt;GridPrinter&lt;/tt&gt; is linked to a &lt;tt&gt;TGridPrinter&lt;/tt&gt; instance and the action is linked to the &lt;tt&gt;Action&lt;/tt&gt; property of a control a click on the control executes the &lt;tt&gt;Print&lt;/tt&gt; method of the &lt;tt&gt;GridPrinter&lt;/tt&gt; without any additional code.
+
+==== TGridPrintPreviewAction ====
+When its property &lt;tt&gt;PreviewDialog&lt;/tt&gt; is linked to a &lt;tt&gt;TGridPrintPreviewDialog&lt;/tt&gt; instance and the action is linked to the &lt;tt&gt;Action&lt;/tt&gt; property of a control a click on the control runs the &lt;tt&gt;Execute&lt;/tt&gt; method of the &lt;tt&gt;GridPrintPreviewDialog&lt;/tt&gt; without any additional code.</text>
+      <sha1>q4h78wq2qy30qwmkit79blsy1ot5f27</sha1>
+    </revision>
+  </page>
+</mediawiki>

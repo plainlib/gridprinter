@@ -1,0 +1,6 @@
+{"version":1,"strings":[
+{"hash":13998722,"name":"tmainform.caption","sourcebytes":[77,117,108,116,105,45,76,97,110,103,117,97,103,101,32,68,101,109,111,110,115,116,114,97,116,105,111,110,32,111,102,32,84,71,114,105,100,80,114,105,110,116,101,114],"value":"Multi-Language Demonstration of TGridPrinter"},
+{"hash":151352958,"name":"tmainform.btnprint.caption","sourcebytes":[80,114,105,110,116,46,46,46],"value":"Print..."},
+{"hash":217709006,"name":"tmainform.btnpreview.caption","sourcebytes":[80,114,101,118,105,101,119,46,46,46],"value":"Preview..."},
+{"hash":82521866,"name":"tmainform.label1.caption","sourcebytes":[76,97,110,103,117,97,103,101,58],"value":"Language:"}
+]}

@@ -1,0 +1,72 @@
+object Form1: TForm1
+  Left = 331
+  Height = 494
+  Top = 127
+  Width = 653
+  Caption = 'StringGrid Demo for TGridPrinter'
+  ClientHeight = 494
+  ClientWidth = 653
+  OnCreate = FormCreate
+  LCLVersion = '2.3.0.0'
+  object StringGrid1: TStringGrid
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = btnPrint
+    Left = 6
+    Height = 451
+    Top = 6
+    Width = 641
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Around = 6
+    ColCount = 6
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goRowSizing, goColSizing, goEditing, goThumbTracking, goSmoothScroll, goCellEllipsis]
+    RowCount = 6
+    TabOrder = 0
+  end
+  object btnPrint: TButton
+    AnchorSideLeft.Control = Owner
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 6
+    Height = 25
+    Top = 463
+    Width = 60
+    Anchors = [akLeft, akBottom]
+    AutoSize = True
+    BorderSpacing.Around = 6
+    Caption = 'Print...'
+    OnClick = btnPrintClick
+    TabOrder = 1
+  end
+  object btnPreview: TButton
+    AnchorSideLeft.Control = btnPrint
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = btnPrint
+    Left = 72
+    Height = 25
+    Top = 463
+    Width = 76
+    AutoSize = True
+    BorderSpacing.Left = 6
+    Caption = 'Preview...'
+    OnClick = btnPreviewClick
+    TabOrder = 2
+  end
+  object GridPrinter1: TGridPrinter
+    Grid = StringGrid1
+    Footer.FontSize = 0
+    Header.Text = 'test||'
+    Header.FontSize = 0
+    ShowPrintDialog = gpdPrintDialog
+    Left = 168
+    Top = 96
+  end
+  object GridPrintPreviewDialog1: TGridPrintPreviewDialog
+    FormParams.PixelsPerInch = 96
+    GridPrinter = GridPrinter1
+    Left = 288
+    Top = 96
+  end
+end

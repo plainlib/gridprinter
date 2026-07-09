@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fpdoc-descriptions><package name="GridPrinterPkg"><module name="GridPrn"><element name="TGridPrnMargins"><short>Class defining the page margins</short>
+      </element><element name="TGridPrnMargins.Left"><short>Value for the left margin, in millimeters</short>
+      </element><element name="TGridPrnMargins.Top"><short>Value for the top margin, in millimeters</short>
+      </element><element name="TGridPrnMargins.Right"><short>Determines whether one of the Lazarus print dialogs should be shown before printing begins.</short>
+      </element><element name="TGridPrnMargins.Bottom"><short>Value for the bottom margin</short>
+      </element><element name="TGridPrnMargins.Header"><short>Distance between header (top edge) to the top of the page</short><descr>It is not checked that the header overlaps with the body of the printed grid.
+</descr>
+      </element><element name="TGridPrnMargins.Footer"><short>Distance between the footer (bottom edge) and the bottom of the page</short><descr>It is not checked that the footer overlaps with the body of the printed grid.
+</descr>
+      </element><element name="TGridPrnMargins.Create"><short>Constructor of the <var>TGridPrnMargins</var> class. Stores the associated <var>GridPrinter</var> in an internal variable (<var>FOwner</var>) so that it can be notified by the <var>Changed()</var> method when a header/footer property has changed.</short>
+      </element><element name="TGridPrnMargins.Changed"><short>Notifies the associated <var>TGridPrinter</var> instance that margins have been changed.</short>
+      </element><element name="TGridPrnOrder"><short>Defines how a large grid is wrapped over into multiple pages</short><descr><ul><li><var>poRowsFirst</var> - completes first the rows, and then continues with the next block of rows</li><li><var>poColsFirst</var> - completes first the coluumns, and then continues with the next block of columns.</li>
+          </ul>
+        </descr>
+      </element><element name="TGridPrnScalingMode"><short>Defines how the <var>PrintScalingFactor</var> is used</short><descr><ul><li><var>smManual</var> - the current value of the <var>PrintScalingFactor</var> is applied directly.</li><li><var>smFitToWidth</var> - the <var>PrintScalingFactor</var> is adjusted such that the number of pages specified by <var>PrintScaleToNumHorPages</var> fits on a single printed page.</li><li><var>smFitToHeight</var> - the <var>PrintScalingFactor</var> is adjusted such that the number of pages specified by <var>PrintScaleToNumVertPages</var> fits on a single printed page.</li>
+          </ul>
+        </descr>
+      </element><element name="TGridPrnOutputDevice"><short>Identifies the device which is used when the <var>GridPrinter</var> is printing</short><descr><ul><li><var>odPrinter</var> - printer</li><li><var>odPreview</var> - bitmap for the print preview</li>
+          </ul>
+        </descr>
+      </element>
+    <element name="TGridPrnDialog"><short>Determines whether an LCL printer dialog should be displayed before the <var>GridPrinter</var> begins printing</short><descr><ul><li><var>gpdNone</var> - no dialog</li><li><var>gpdPageSetup</var> - displays an LCL TPageSetupDialog</li><li><var>gpdPrintDialog</var> - displays an LCL TPrintDialog</li><li><var>gpdPrinterSetup</var> - displays an LCL TPrinterSetup dialog</li>
+          </ul>
+        </descr>
+      </element>
+    <element name="TGridPrnPrintCellEvent"><short>Event fired when the <var>GridPrinter</var> is printing the specified cell. When a handler is provided it overrides the entire drawing process.</short>
+      </element><element name="TGridPrnGetCellTextEvent"><short>Event querying the text to be printed in the specified cell.</short>
+      </element><element name="TGridPrnGetColCountEvent"><short>Event querying the total count of columns to be printed.</short><descr>Note: Fixed columns must be included in the returned value.
+</descr>
+      </element><element name="TGridPrnGetRowCountEvent"><short>Event querying the total count of rows to be printed.</short><descr>Note: Fixed rows must be included in the returned value.
+</descr>
+      </element><element name="TGridPrnNewLineEvent"><short>Event fired whenever the <var>GridPrinter</var> begins printing a new line.</short>
+      </element><element name="TGridPrnLinePrintedEvent"><short>Event fired whenever the <var>GridPrinter</var> has finished printing a line of cells.</short>
+      </element><element name="TGridPrnNewPageEvent"><short>Event fired whenver the <var>GridPrinter</var> begins a new page.</short>
+      </element><element name="TGridPrnHeaderFooterSection"><short>Identifies the section of the print header or footer.</short><descr><ul><li><var>hfsLeft</var> - left-aligned section</li><li><var>hfsCenter</var> - centered section</li><li><var>hfsRight</var> - right-aligned section</li>
+          </ul>
+        </descr>
+      </element><element name="TGridPrnOption"><short>Enumeration of options to control the <var>GridPrinter</var>
+        </short><descr><ul><li><var>gpoCenterHor</var> - centers the grid horizontally on the page</li><li><var>gpoCenterVert</var> - centers the grid vertically on the page</li><li><var>gpoHorGridLines</var> - prints horizontal lines between the grid rows</li><li><var>gpoVertGridLines</var> - prints vertical lines between the grid columns</li><li><var>gpoFixedHorGridLines</var> - prints horiztonal lines between the fixed grid rows</li><li><var>gpoFixedVertGridLines</var> - prints vertical lines between the fixed grid columns</li><li><var>gpoHeaderBorderLines</var> - prints dividing lines between grid row/column headers and the normal cells</li><li><var>gpoOuterBorderLines</var> - prints lines around the outer border of the grid</li>
+          </ul>
+        </descr>
+      </element><element name="TGridPrnOptions" link="TGridPrnOption"><short>Set of options to control the <var>GridPrinter</var>
+        </short><descr><ul><li><var>gpoCenterHor</var> - centers the grid horizontally on the page</li><li><var>gpoCenterVert</var> - centers the grid vertically on the page</li><li><var>gpoHorGridLines</var> - prints horizontal lines between the grid rows</li><li><var>gpoVertGridLines</var> - prints vertical lines between the grid columns</li><li><var>gpoFixedHorGridLines</var> - prints horiztonal lines between the fixed grid rows</li><li><var>gpoFixedVertGridLines</var> - prints vertical lines between the fixed grid columns</li><li><var>gpoHeaderBorderLines</var> - prints dividing lines between grid row/column headers and the normal cells</li><li><var>gpoOuterBorderLines</var> - prints lines around the outer border of the grid</li>
+          </ul>
+        </descr>
+      </element><element name="TGridPrnHeaderFooter"><short>Class representing the header/footer lines on the printed page</short>
+      </element><element name="TGridPrnHeaderFooter.Changed"><short>Notifies the <var>GridPrinter</var> that header/footer properties have changed.</short>
+      </element><element name="TGridPrnHeaderFooter.DefineProperties"><short>Auxiliary method of the streaming mechanism. Is used to implement high-dpi support of the header/footer font size in the lfm file.</short>
+      </element><element name="TGridPrnHeaderFooter.ReadFontSize"><short>Auxiliary method of the streaming mechanism. Is used to store the header/footer font size in the lfm file so that high-dpi is supported.</short>
+      </element><element name="TGridPrnHeaderFooter.WriteFontSize"><short>Auxiliary method of the streaming mechanism. Is used to read the header/footer font size from the lfm file so that high-dpi is supported.</short>
+      </element><element name="TGridPrnHeaderFooter.Create"><short>Constructor of the <var>TGridPrnHeaderFooter</var> class. Stores the associated <var>GridPrinter</var> in an internal variable (<var>FOwner</var>) so that it can be notified by the <var>Changed()</var> method when a header/footer property has changed. Creates an internal <var>TFont</var> instance to define the header/footer font.</short>
+      </element><element name="TGridPrnHeaderFooter.Destroy"><short>Destructor of the <var>TGridPrnHeaderFooter</var> class. Destroys the internal <var>TFont</var> instance.</short>
+      </element><element name="TGridPrnHeaderFooter.FFont"><short>Internal <var>TFont</var> instance which defines the font of the header/footer.</short>
+      </element><element name="TGridPrnHeaderFooter.IsShown"><short>Function returning <var>true</var> if the header/footer is shown on the page. For this it is required that the <var>Visible</var> property is <var>true</var> and that the <var>Text</var> is not an empty string.</short>
+      </element><element name="TGridPrnHeaderFooter.IsTextEmpty"><short>Function returning <var>true</var> if there is no text to be displayed in any section of the header/footer.</short>
+      </element><element name="TGridPrnHeaderFooter.RealLineColor"><short>Returns the color of the line underneath the header/above the footer. Normally this is given by the <var>LineColor</var> property. But when it has the value <var>clDefault</var> or the <var>GridPrinter</var>'s <var>Monochrome</var> property is <var>true</var> the function returns the color <var>clBlack</var>.</short>
+      </element><element name="TGridPrnHeaderFooter.RealLineWidth"><short>Returns the line width, in printing device pixels, of the dividing line below the header/above the footer. When the <var>GridPrinter</var>'s <var>LineWidth</var> property has a positive value it is scaled up to the current device resolution. Otherwise it returns the scaled width of 1 screen pixel wide line.</short>
+      </element><element name="TGridPrnHeaderFooter.ProcessedText"><short>Returns the header/footer text in the section specified by <var>AIndex</var> after replacement of the symbols.</short>
+      </element><element name="TGridPrnHeaderFooter.SectionText"><short>Extracts from the <var>Text</var> property the header/footer text in the section specified by <var>AIndex</var>.</short><descr>The text can contain the following symbols which are replaced during printing/preview generation by appropriate values:
+<ul><li><var>$DATE</var> - Current date.</li><li><var>$PAGECOUNT</var> - Total number of pages to be printed.</li><li><var>$PAGE</var> - Number of the currently printed page. First page number is 1.</li><li><var>$FULL_FILENAME</var> - Is replaced by the full path of the <var>FileName</var> property of the <var>GridPrinter</var>.</li><li><var>$FILENAME</var> - Is replaced by the <var>FileName</var> property of the <var>GridPrinter</var> after removal of the file path.</li><li><var>$PATH</var> - Is replaced by the path to the <var>FileName</var> property of the <var>GridPrinter</var>.</li><li><var>$TIME</var> - Current time.</li>
+          </ul>
+        </descr>
+      </element><element name="TGridPrnHeaderFooter.Text"><short>Defines the text displayed in the header or footer.</short><descr><p>Each text is composed of three sections: a left-aligned part, a centered part, and a right-aligned part. These sections are separated by a string defined by the <var>SectionSeparator</var> property; normally this is the character <var>'|'</var>.</p>
+
+The text can contain the following symbols which are replaced during printing/preview generation by appropriate values:
+<ul><li><var>$DATE</var> - Current date.</li><li><var>$PAGECOUNT</var> - Total number of pages to be printed.</li><li><var>$PAGE</var> - Number of the currently printed page. First page number is 1.</li><li><var>$FULL_FILENAME</var> - Is replaced by the full path of the <var>FileName</var> property of the <var>GridPrinter</var>.</li><li><var>$FILENAME</var> - Is replaced by the <var>FileName</var> property of the <var>GridPrinter</var> after removal of the file path.</li><li><var>$PATH</var> - Is replaced by the path to the <var>FileName</var> property of the <var>GridPrinter</var>.</li><li><var>$TIME</var> - Current time.</li>
+          </ul>
+        </descr>
+      </element><element name="TGridPrnHeaderFooter.Visible"><short>Allows to turn each header/footer ON and OFF. By default, both of them are visible (<var>true</var>).</short>
+      </element><element name="TGridPrnHeaderFooter.FontSize"><short>Font size value stored in the lfm file. This is requires do make high-dpi scaling work correctly.</short>
+      </element><element name="TGridPrnHeaderFooter.Font"/><element name="TGridPrnHeaderFooter.LineColor"><short>Color of the dividing line below the header/above the footer. Its default value (<var>clDefault</var>) will be interpreted as <var>clBlack</var>.</short>
+      </element><element name="TGridPrnHeaderFooter.LineWidth"><short>Width of the dividing line below the header / above the footer, in millimeters. A value &lt;= 0 will be interpreted as 1 screen pixel scaled up to the current device resolution.</short>
+      </element><element name="TGridPrnHeaderFooter.ShowLine"><short>This property allows to switch the dividing line below the header / above the footer ON and OFF. By default, the dividing line is shown.</short>
+      </element><element name="TGridPrnHeaderFooter.SectionSeparator"><short>Defines the character(s) separating the left-aligned/centered/right-aligned sections of the header/footer <var>Text</var>. By default this is the character <var>'|'</var>.</short>
+      </element><element name="TGridPrinter"><short><var>TGridPrinter</var> is a component to simplify printing of string grids or other descendants of <var>TCustomGrid</var>. Besides sending the grid to a printer it also creates a bitmap for a preview of the printout. In case of large grids, the output is wrapped into multiple pages.</short>
+      </element><element name="TGridPrinter.Grid"><short>Points to the grid to be printed. The component cannot work without a valid grid.</short>
+      <descr>Ideally, this should be a <var>TStringGrid</var>, but other descendants of <var>TCustomGrid</var> can be printed as well when the appropriate event handlers are provided.
+</descr>
+      </element><element name="TGridPrinter.OnUpdatePreview"><short>When the GridPrinter runs in preview mode the application can be notified, for example, when some parameter has been changed so that the preview can repaint itself.</short>
+      </element><element name="TGridPrinter.OnPrintCell"><short>When this event has a handler it completely replaces the built-in code for printing a cell. Can be used for printing very specific grids</short>
+      </element><element name="TGridPrinter.OnPrepareCanvas"><short>When the canvas for printing a cell has been prepared the user has the opportunity here to override the selection of colors, fonts, alignments etc. The event is similar to the equally-named event of the grid. The handler can be shared between grid and <var>GridPrinter</var>, it only must be guaranteed that the correct canvas is used in the code.</short>
+      </element><element name="TGridPrinter.OnNewPage"><short>Fires when the <var>GridPrinter</var> begins a new page.</short>
+      </element><element name="TGridPrinter.OnNewLine"><short>Fires when the <var>GridPrinter</var> starts printing a new line of cells.</short>
+      </element><element name="TGridPrinter.OnLinePrinted"><short>Fires when the <var>GridPrinter</var> has finished printing a specific line.</short>
+      </element><element name="TGridPrinter.OnGetRowCount"><short>In this event the application can tell the <var>GridPrinter</var> the number of rows to be printed. This is useful for printing a <var>DBGrid</var> which holds only a small portion of all rows of a dataset.</short>
+      </element><element name="TGridPrinter.OnGetColCount"><short>In this event the application can tell the <var>GridPrinter</var> the number of columns to be printed.</short>
+      </element><element name="TGridPrinter.OnGetCellText"><short>Whenever the <var>GridPrinter</var> needs to know the text in a specific cell it sends this event. The text to be printed can be passed in a parameter. Is mainly intended for non-standard grids which have a different cell technology from <var>TStringGrid</var>.</short>
+      </element><element name="TGridPrinter.OnBeforePrint"><short>Fires before printing begins. The printer has not yet received its <var>BeginDoc</var> command.</short>
+      </element><element name="TGridPrinter.OnAfterPrint"><short>Fires when printing is finished.</short>
+      </element><element name="TGridPrinter.ToPage"><short>Defines the last page to be printed. Any value larger than the real page count prints to the last page.</short>
+      </element>
+    <element name="TGridPrinter.ShowPrintDialog"><short>Determines whether one of the Lazarus print dialogs should be shown before printing begins.</short><descr><ul><li><var>gpdNone</var> - no dialog</li><li><var>gpdPageSetup</var> - displays an LCL TPageSetupDialog</li><li><var>gpdPrintDialog</var> - displays an LCL TPrintDialog</li><li><var>gpdPrinterSetup</var> - displays an LCL TPrinterSetup dialog</li>
+          </ul>
+        </descr>
+      </element><element name="TGridPrinter.PrintScaleFactor"><short>Scaling factor for the printout. Default: 1.0.</short><descr>Call the method <var>ScaleToPages()</var> if you want to adjust the <var>PrintScaleFactor</var> such that the entire printout fits on a given number of pages.
+</descr>
+      </element><element name="TGridPrinter.PrintOrder"><short>Large grids are wrapped into several pages. This property defines whether rows (<var>poRowsFirst</var>) or columns (<var>poColsFirst</var>) will be completed first.</short>
+      </element><element name="TGridPrinter.Orientation"><short>Defines the page orientation: <var>poPortrait</var>, <var>poLandscape</var>, <var>poReverseLandscape</var>, <var>poReversePortrait</var> (declared in the <var>Printers</var> unit).</short>
+      </element><element name="TGridPrinter.Options"><short>Options for fine-tuning the printout</short><descr><ul><li><var>gpoCenterHor</var> - centers the grid horizontally on the page</li><li><var>gpoCenterVert</var> - centers the grid vertically on the page</li><li><var>gpoHorGridLines</var> - prints horizontal lines between the grid rows</li><li><var>gpoVertGridLines</var> - prints vertical lines between the grid columns</li><li><var>gpoFixedHorGridLines</var> - prints horiztonal lines between the fixed grid rows</li><li><var>gpoFixedVertGridLines</var> - prints vertical lines between the fixed grid columns</li><li><var>gpoHeaderBorderLines</var> - prints dividing lines between grid row/column headers and the normal cells</li><li><var>gpoOuterBorderLines</var> - prints lines around the outer border of the grid</li>
+          </ul>
+        </descr>
+      </element><element name="TGridPrinter.Monochrome"><short> Prints the grid only with black color.</short>
+      </element><element name="TGridPrinter.Margins"><short>Defines page and header/footer margins, in millimeters.</short><seealso><link id="TGridPrnMargins"/>
+        </seealso>
+      </element><element name="TGridPrinter.Header"><short>Parameters for printing a header at the top of each page</short><seealso><link id="TGridPrnHeaderFooter"/>
+        </seealso>
+      </element><element name="TGridPrinter.Footer"><short>Parameters for printing a footer at the bottom of each page</short><seealso><link id="TGridPrnHeaderFooter"/>
+        </seealso>
+      </element><element name="TGridPrinter.GridLineWidth"><short>Linewidth of the inner grid lines, in millimeters. If not positive, the scaled value of the grid's <var>GridLineWidth</var> is used.</short>
+      </element><element name="TGridPrinter.GridLineColor"><short>Color of the inner grid lines.</short>
+      </element><element name="TGridPrinter.FromPage"><short>Defines the first page to be printed. Any value less than 1 is interpreted as "first page".</short>
+      </element><element name="TGridPrinter.FixedLineWidth"><short> Linewidth of the dividing line between fixed and normal cells in the printout/preview, in millimeters. If not positive, the scaled value of the grid's <var>GridLineWidth</var> is used.</short>
+      </element><element name="TGridPrinter.FixedLineColor"><short>Line color of the dividing line between fixed and normal cells in the printout/preview.</short>
+      </element><element name="TGridPrinter.FileName"><short>Has no functional use inside the <var>GridPrinter</var>. But indicates the name of the file which is printed, if applicable.</short><descr>The filename can be displayed in the header or footer of the printout/preview where it is used to replace the symbols <var>$FULL_FILENAME</var>, <var>$FILENAME</var>, <var>$PATH</var> in the header/footer <var>Text</var>.
+</descr>
+      </element><element name="TGridPrinter.BorderLineWidth"><short>Linewidth of the outer border of the printed grid, in millimeters. If not positive, the scaled value of the grid's <var>GridLineWidth</var> is used.</short>
+      </element><element name="TGridPrinter.BorderLineColor"><short> Line color of the outer border of the printed grid.</short>
+      </element><element name="TGridPrinter.RowHeight"><short>Height of the specified row, given in pixels of the current output device. Read-only.</short>
+      </element><element name="TGridPrinter.RowCount"><short>Number of rows to be printed, including fixed rows (read-only).</short>
+      </element><element name="TGridPrinter.PrintScalingMode"><short>Determines how the print output is scaled.</short><descr><ul><li><var>smManual</var> - the current value of the <var>PrintScalingFactor</var> is applied directly.</li><li><var>smFitToWidth</var> - the <var>PrintScalingFactor</var> is adjusted such that the number of pages specified by <var>PrintScaleToNumHorPages</var> fits on a single printed page.</li><li><var>smFitToHeight</var> - the <var>PrintScalingFactor</var> is adjusted such that the number of pages specified by <var>PrintScaleToNumVertPages</var> fits on a single printed page.</li>
+          </ul>
+        </descr>
+      </element><element name="TGridPrinter.PrintScaleToNumVertPages"><short>The <var>PrintScalingFactor</var> is adjusted such that this number of pages fits onto a single sheet of paper vertically.</short>
+      </element><element name="TGridPrinter.PrintScaleToNumHorPages"><short>The <var>PrintScalingFactor</var> is adjusted such that this number of pages fits onto a single sheet of paper horizontally.</short>
+      </element><element name="TGridPrinter.PageNumber"><short>Number of the page which is currently printed. Pages numbers begin with <var>1</var>. (Read-only)</short>
+      </element><element name="TGridPrinter.PageCount"><short>Total number of pages to be printed. (Read-only).</short>
+      </element><element name="TGridPrinter.Padding"><short>Distance, in pixels of the current output device, between cell text and cell border (read-only)</short>
+      </element><element name="TGridPrinter.PixelsPerInchY"><short>Pixel density of the current output device, in vertical direction (read-only)</short>
+      </element><element name="TGridPrinter.PixelsPerInchX"><short>Pixel density of the current output device, in horizontal direction (read-only)</short>
+      </element><element name="TGridPrinter.PageRect"><short> Rectangle on the page, in pixels of the current output device, available for printing the grid. In other words: size of the page with margins subtracted. (Read-only)</short>
+      </element><element name="TGridPrinter.PageWidth"><short>Width of the page, in pixels of the current output device (read-only)</short>
+      </element><element name="TGridPrinter.PageHeight"><short>Height of the page, in pixels of the current output device (read-only).</short>
+      </element><element name="TGridPrinter.HeaderMargin"><short>Distance of the header top from the page top, in pixels of the current output device (read-only)</short>
+      </element><element name="TGridPrinter.FooterMargin"><short>Distance of the footer bottom from the page bottom, in pixels of the current output device (read-only).</short>
+      </element><element name="TGridPrinter.ColWidth"><short>Width of the specified column, given in pixels of the current output device (printer or preview bitmap). Read-only.</short>
+      </element><element name="TGridPrinter.ColCount"><short>Number of columns to be printed (including fixed columns). Read-only.</short>
+      </element><element name="TGridPrinter.Canvas"><short>Canvas currently used by the <var>GridPrinter</var>. This is either the printer canvas or the canvas of the preview bitmap sent to the <var>TGridPrintPreview</var> component.</short>
+      </element><element name="TGridPrinter.UpdatePreview"><short>Fires the event <var>OnUpdatePreview</var> if the <var>GridPrinter</var> is in preview mode</short>
+      </element><element name="TGridPrinter.ScaleY"><short>General scaling function for conversion of vertical screen pixels to pixels on the printer or the preview bitmap.</short>
+      </element><element name="TGridPrinter.ScaleX"><short>General scaling function for conversion of horizontal screen pixels to pixels on the printer or the preview bitmap.</short>
+      </element><element name="TGridPrinter.ScaleToPages"><short>Scales the printout such that it fits on <var>NumHor</var> pages horizontally and <var>NumVert</var> pages vertically. When <var>NumHorPages</var> is 0 (or less) only the height is scaled according to <var>NumVert</var>. Similarly when <var>NumVert</var> is 0 (or less).</short>
+      </element>
+    <element name="TGridPrinter.Print"><short>Prints the grid (to the printer). Main method of the component.</short>
+      </element><element name="TGridPrinter.GetCellText"><short>Returns the text to be printed for the grid cell at the given row and column indices.</short>
+      </element><element name="TGridPrinter.CreatePreviewBitmap"><short>Creates the preview bitmap for the printout of the specified page. The bitmap is scaled by the given percentage relative to the original pager size (100).</short><descr>The bitmap is displayed by the <var>TGridPrintPreviewDialog</var>.
+</descr>
+      </element><element name="TGridPrinter.Destroy"><short>Destructor of the <var>TGridPrinter</var> class.</short>
+      </element><element name="TGridPrinter.Create"><short>Constructor of the <var>TGridPrinter</var> class</short>
+      </element><element name="TGridPrinter.OutputDevice"><short>Indicates whether the currently active printing process goes to the printer (via <var>Print</var> method) or to the preview bitmap (via <var>CreatePreviewBitmap</var> method)</short><descr><ul><li><var>odPrinter</var> - printer</li><li><var>odPreview</var> - bitmap for the print preview</li>
+          </ul>
+        </descr><seealso><link id="TGridPrnOutputDevice"/>
+        </seealso>
+      </element><element name="TGridPrinter.SelectFont"><short>Selects the specified font for the given canvas and scales its size by the <var>AScaleFactor</var> which is determined from the output device resolution and the <var>PrintScaleFactor</var>.</short>
+      </element><element name="TGridPrinter.ScaleRowHeights"><short>Scales the grid's row heights which are in screen pixels to the required output resolution. The result are stored in the internal array <var>FRowHeights</var> accessible via the public property <var>RowHeights</var>.</short>
+      </element><element name="TGridPrinter.ScaleColWidths"><short>Scales the grid's column widths which are in screen pixels to the required output resolution. The result are stored in the internal array <var>FColWidhts</var> accessible via the public property <var>ColWidths</var>.</short>
+      </element><element name="TGridPrinter.PrintRowHeader"><short>Prints the row headers of the specified row. Row headers are the cells in the FixedCols of that row. The row is positioned at the given Y coordinate on the currently active canvas. X is the position of the left edge of the grid. Both X and Y are in output device pixels.</short>
+      </element><element name="TGridPrinter.CalcFixedColPos"><short>Calculates the output device coordinates of the left end of the first and the right end of the last fixed columns for the printed page containing cell columns between <var>AStartCol</var> and <var>AEndCol</var>
+        </short>
+      </element><element name="TGridPrinter.PrintPage"><short>Prints the cells between <var>StartCol</var> and <var>EndCol</var> and between <var>StartRow</var> and <var>EndRow</var>. The fixed cells belonging to these columns and rows are printed as well even if they are not immediately adjacent to the cell range.</short>
+      </element><element name="TGridPrinter.PrintGridLines"><short>Print the inner grid lines, the dividing lines between fixed and normal cells, and the outer border lines.</short>
+      </element><element name="TGridPrinter.PrintHeader"><short>Prints the header text and its associated dividing line at the top of the page.</short><seealso><link id="TGridPrnHeaderFooter"/>
+        </seealso>
+      </element><element name="TGridPrinter.PrintFooter"><seealso><link id="TGridPrnHeaderFooter"/>
+        </seealso><short>Prints the footer text and its associated dividing line at the bottom of the page.</short>
+      </element><element name="TGridPrinter.PrintColHeaders"><short>Prints the headers of the columns between <var>ACol1</var> and <var>ACol2</var>. Column headers are the cells in the FixedRows of these columns. The headers begin at the output device coordinate <var>Y</var>.</short>
+      </element><element name="TGridPrinter.PrintCheckbox"><short>Prints a checkbox in the cell at column <var>ACol</var> and row <var>ARow</var>. The cell spans the rectangle <var>ARect</var> given in output device coordinates. <var>ACheckState</var> indicates whether the checkbox should be drawn as checked, unchecked or grayed.</short>
+      </element><element name="TGridPrinter.PrintCell"><short>Prints the cell at column <var>ACol</var> and row <var>ARow</var>. The cell is spanned by the rectangle <var>ARect</var> given in output device pixels.</short><descr>Before printing, the methode <var>PrepareCanvas()</var> is called in which the output canvas gets the required colors, font, text alignment etc.
+</descr>
+      </element><element name="TGridPrinter.PrintByRows"><short>Prints the entire grid with row priority. This means that if the printout needs to be split into several pages the rows are completed first before the process advances to the next block of rows.</short>
+      </element><element name="TGridPrinter.PrintByCols"><short>Prints the entire grid with column priority. This means that if the printout needs to be split into several pages the columns are completed first before the process advances to the next block of columns.</short>
+      </element><element name="TGridPrinter.PrepareCanvas"><short>Prepares the canvas for printing the cell in column <var>ACol</var>and row <var>ARow</var>. It is attempted to re-use the canvas parameters of the grid. The event <var>OnPrepareCanvas</var> is fired to give the application the opportunity to override these settings.</short>
+      </element><element name="TGridPrinter.Prepare"><short>Preparation of the printing process. Determines the available resolution and the page size (method <var>Measure()</var>), and calculates the column/row indices at which page breaks will be needed (method <var>LayoutPageBreaks()</var>)</short>
+      </element><element name="TGridPrinter.Notification"><short>Inherited method which must be overridden to reset the <var>Grid</var> property to <var>nil</var> if the associated grid has been deleted from the form.</short>
+      </element><element name="TGridPrinter.NewPage"><short>Sends a <var>NewPage</var> to the printer. Is ignored when the output goes to the preview bitmap.</short>
+      </element><element name="TGridPrinter.Measure"><short>Calculates the page margins, column widths and row heights in output device units which are needed for determining the pagebreaks.</short>
+      </element><element name="TGridPrinter.Loaded"><short>Inherited method called when the form has been loaded from the lfm file. Is overridden to get the header/footer fontsize for LCL scaling.</short>
+      </element><element name="TGridPrinter.LayoutPageBreaks"><short>Iterates over all cells of the grid and calculates the column and row indices at which page breaks must be introduced. Depending on the <var>PrintOrder</var> either rows or columns are first completed before the print continues with the next block of rows/columns.</short>
+      </element><element name="TGridPrinter.GetPenColor"><short>Adjusts the specified pen color (used for drawing lines) to take care of the <var>Monochrome</var> setting of the <var>GridPrinter</var> and whether the operating system is in a dark mode.</short>
+      </element><element name="TGridPrinter.GetFontColor"><short>Adjusts the specified font color (used for text ) to take care of the <var>Monochrome</var> setting of the <var>GridPrinter</var> and whether the operating system is in a dark mode.</short>
+      </element><element name="TGridPrinter.GetBrushColor"><short>Adjusts the specified brush color (used for filling areas) to take care of the <var>Monochrome</var> setting of the <var>GridPrinter</var> and whether the operating system is in a dark mode.</short>
+      </element><element name="TGridPrinter.Execute"><short>Main printing routine on the specified canvas. Fires the <var>OnBeforePrint</var> event, prints the grid by rows or columns, and fires the <var>OnAfterPrint</var> event.</short>
+      </element><element name="TGridPrinter.DoUpdatePreview"><short>Fires the event <var>OnUpdatePreview</var> after relevant changes if the output goes to the preview bitmap.</short>
+      </element><element name="TGridPrinter.DoPrepareCanvas"><short>Fires the event <var>OnPrepareCanvas</var> immediately before printing a cell. The output canvas already has been prepared, and the application has the opportunity to modify these prepared canvas settings.</short>
+      </element><element name="TGridPrinter.DoPrintCell"><short>Fires the event <var>OnPrintCell</var> in which the user can provide its own printing code. If the argument <var>Done</var> is returned by the event handler as <var>true</var> nothing else is printed in this particular cell so that the user routine bypasses the default behaviour. Otherwise the process continues with the built-in printing routine.</short>
+      </element><element name="TGridPrinter.DoNewPage"><short>Fires the event <var>OnNewPage</var> when a new page begins. The new page will contain the cells between <var>AStartCol</var> and <var>AEndCol</var> and between <var>AStartRow</var> and <var>AEndRow</var>, as well as the associated fixed cells (even if they are not adjacent to the cell block).</short>
+      </element><element name="TGridPrinter.DoNewLine"><short>Fires the event <var>OnNewLine</var> if a new line is started. The row index of the new line is given by <var>ARow</var>. When printing a <var>DBGrid</var>, for example, this can be used to advance the dataset.</short>
+      </element><element name="TGridPrinter.DoLinePrinted"><short>Fires the event <var>OnLinePrinted</var> when print of the given line is finished. The line is indicated by the row index <var>ARow</var>.</short>
+      </element><element name="TGridPrinter.CalcFixedRowPos"><short>Calculates the output device coordinates of the upper end of the first and the lower end of the last fixed row for the printed page containing cell rows between <var>AStartRow</var> and <var>AEndRow</var>
+        </short>
+      </element>
+    </module>
+  </package>
+</fpdoc-descriptions>

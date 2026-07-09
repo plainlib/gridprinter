@@ -1,0 +1,103 @@
+object Form1: TForm1
+  Left = 331
+  Height = 382
+  Top = 130
+  Width = 689
+  Caption = 'Form1'
+  ClientHeight = 382
+  ClientWidth = 689
+  OnCreate = FormCreate
+  LCLVersion = '2.3.0.0'
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 345
+    Top = 0
+    Width = 689
+    Align = alClient
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgThumbTracking]
+    TabOrder = 0
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 37
+    Top = 345
+    Width = 689
+    Align = alBottom
+    AutoSize = True
+    BevelOuter = bvNone
+    ClientHeight = 37
+    ClientWidth = 689
+    TabOrder = 1
+    object Button1: TButton
+      AnchorSideLeft.Control = Panel1
+      AnchorSideTop.Control = Panel1
+      Left = 6
+      Height = 25
+      Top = 6
+      Width = 104
+      AutoSize = True
+      BorderSpacing.Around = 6
+      Caption = 'Print preview...'
+      OnClick = Button1Click
+      TabOrder = 0
+    end
+    object cbShowTitles: TCheckBox
+      AnchorSideLeft.Control = Button1
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Panel1
+      AnchorSideTop.Side = asrCenter
+      Left = 116
+      Height = 19
+      Top = 9
+      Width = 75
+      BorderSpacing.Around = 6
+      Caption = 'Show titles'
+      OnChange = cbShowTitlesChange
+      TabOrder = 1
+    end
+    object cbShowIndicator: TCheckBox
+      AnchorSideLeft.Control = cbShowTitles
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Panel1
+      AnchorSideTop.Side = asrCenter
+      Left = 203
+      Height = 19
+      Top = 9
+      Width = 141
+      BorderSpacing.Left = 6
+      BorderSpacing.Around = 6
+      Caption = 'Show indicator column'
+      OnChange = cbShowIndicatorChange
+      TabOrder = 2
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = BufDataset1
+    Left = 256
+    Top = 64
+  end
+  object GridPrinter1: TGridPrinter
+    Footer.FontSize = 0
+    Header.FontSize = 0
+    OnBeforePrint = GridPrinter1BeforePrint
+    OnGetCellText = GridPrinter1GetCellText
+    OnGetRowCount = GridPrinter1GetRowCount
+    OnNewLine = GridPrinter1NewLine
+    Left = 167
+    Top = 136
+  end
+  object GridPrintPreviewDialog1: TGridPrintPreviewDialog
+    FormParams.PixelsPerInch = 96
+    GridPrinter = GridPrinter1
+    Left = 167
+    Top = 208
+  end
+  object BufDataset1: TBufDataset
+    FieldDefs = <>
+    Left = 167
+    Top = 64
+  end
+end

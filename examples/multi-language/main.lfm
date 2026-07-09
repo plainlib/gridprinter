@@ -1,0 +1,169 @@
+object MainForm: TMainForm
+  Left = 331
+  Height = 485
+  Top = 127
+  Width = 651
+  Caption = 'Multi-Language Demonstration of TGridPrinter'
+  ClientHeight = 485
+  ClientWidth = 651
+  OnCreate = FormCreate
+  LCLVersion = '2.3.0.0'
+  object StringGrid1: TStringGrid
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Panel1
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = btnPrint
+    Left = 8
+    Height = 405
+    Top = 39
+    Width = 635
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Around = 8
+    ColCount = 6
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goRowSizing, goColSizing, goEditing, goThumbTracking, goSmoothScroll, goCellEllipsis]
+    RowCount = 6
+    TabOrder = 0
+  end
+  object btnPrint: TButton
+    AnchorSideLeft.Control = Owner
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 8
+    Height = 25
+    Top = 452
+    Width = 60
+    Anchors = [akLeft, akBottom]
+    AutoSize = True
+    BorderSpacing.Around = 8
+    Caption = 'Print...'
+    OnClick = btnPrintClick
+    TabOrder = 1
+  end
+  object btnPreview: TButton
+    AnchorSideLeft.Control = cmbDialogs
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = btnPrint
+    Left = 264
+    Height = 25
+    Top = 452
+    Width = 76
+    AutoSize = True
+    BorderSpacing.Left = 24
+    Caption = 'Preview...'
+    OnClick = btnPreviewClick
+    TabOrder = 2
+  end
+  object cmbDialogs: TComboBox
+    AnchorSideLeft.Control = btnPrint
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = btnPrint
+    AnchorSideTop.Side = asrCenter
+    Left = 76
+    Height = 23
+    Top = 453
+    Width = 164
+    DropDownCount = 24
+    ItemHeight = 15
+    Items.Strings = (
+      'RSNoPrinterDialog'
+      'RSPageSetupDialog'
+      'RSPrinterDialog'
+      'RSPrinterSetupDialog'
+    )
+    Style = csDropDownList
+    TabOrder = 3
+  end
+  object ccbPreviewOptions: TCheckComboBox
+    AnchorSideLeft.Control = btnPreview
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = btnPreview
+    AnchorSideTop.Side = asrCenter
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 348
+    Height = 22
+    Top = 453
+    Width = 295
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Around = 8
+    DropDownCount = 24
+    ItemHeight = 16
+    Items.Strings = (
+      'ppoNavigationBtns'
+      'ppoNavigationEdit'
+      'ppoZoomBtns'
+      'ppoPageOrientationBtns'
+      'ppoMarginsBtn'
+      'ppoHeaderFooterBtn'
+      'ppoPrintOrderBtns '
+      'ppoCenterBtns'
+      'ppoScalePrinterBtn'
+      'ppoPageSetupBtn'
+      'ppoPageInfo'
+      'ppoZoomInfo'
+    )
+    OnItemChange = ccbPreviewOptionsItemChange
+    TabOrder = 4
+  end
+  object Panel1: TPanel
+    Left = 8
+    Height = 23
+    Top = 8
+    Width = 635
+    Align = alTop
+    AutoSize = True
+    BorderSpacing.Around = 8
+    BevelOuter = bvNone
+    ClientHeight = 23
+    ClientWidth = 635
+    TabOrder = 5
+    object Label1: TLabel
+      AnchorSideLeft.Control = Panel1
+      AnchorSideTop.Control = cmbLanguages
+      AnchorSideTop.Side = asrCenter
+      Left = 0
+      Height = 15
+      Top = 4
+      Width = 55
+      Caption = 'Language:'
+    end
+    object cmbLanguages: TComboBox
+      AnchorSideLeft.Control = Label1
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Panel1
+      AnchorSideRight.Control = Panel1
+      AnchorSideRight.Side = asrBottom
+      Left = 61
+      Height = 23
+      Top = 0
+      Width = 574
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 6
+      ItemHeight = 15
+      OnChange = cmbLanguagesChange
+      Style = csDropDownList
+      TabOrder = 0
+    end
+  end
+  object GridPrinter1: TGridPrinter
+    Grid = StringGrid1
+    Footer.FontSize = 0
+    Header.Text = 'Test||'
+    Header.FontSize = 0
+    Left = 168
+    Top = 96
+  end
+  object GridPrintPreviewDialog1: TGridPrintPreviewDialog
+    FormParams.Width = 700
+    FormParams.Height = 800
+    FormParams.Position = poDesigned
+    FormParams.PixelsPerInch = 96
+    GridPrinter = GridPrinter1
+    Zoom = 199
+    ZoomMode = zmFitHeight
+    Left = 288
+    Top = 96
+  end
+end
