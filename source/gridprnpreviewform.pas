@@ -1032,7 +1032,7 @@ begin
   hintStr := Format('%s: %.1f mm', [AMarginName, CalcDraggedMargin(AMarginIndex, ADraggedPos)]);
   P := Mouse.CursorPos;
   R := FHintWindow.CalcHintRect(Screen.Width, hintStr, nil);
-  OffsetRect(R, P.X, P.Y);
+  Types.OffsetRect(R, P.X, P.Y);
   FHintWindow.ActivateHint(R, hintStr);
   // Note: Application.Hint is not showing with pressed mouse button! }
 end;

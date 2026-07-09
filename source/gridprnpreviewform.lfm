@@ -8,7 +8,7 @@ object GridPrintPreviewForm: TGridPrintPreviewForm
   ClientWidth = 901
   Position = poMainFormCenter
   ShowHint = True
-  LCLVersion = '3.99.0.0'
+  LCLVersion = '4.6.0.0'
   OnActivate = FormActivate
   object ToolBar: TToolBar
     Left = 2
@@ -62,14 +62,14 @@ object GridPrintPreviewForm: TGridPrintPreviewForm
     end
     object tbDivider1: TToolButton
       Left = 30
-      Height = 26
+      Height = 5
       Top = 0
       Caption = 'tbDivider1'
       Style = tbsDivider
     end
     object tbDivider2: TToolButton
       Left = 187
-      Height = 26
+      Height = 5
       Top = 0
       Caption = 'tbDivider2'
       Style = tbsDivider
@@ -82,7 +82,7 @@ object GridPrintPreviewForm: TGridPrintPreviewForm
     end
     object tbDivider3: TToolButton
       Left = 332
-      Height = 26
+      Height = 5
       Top = 0
       Caption = 'tbDivider3'
       Style = tbsDivider
@@ -143,7 +143,7 @@ object GridPrintPreviewForm: TGridPrintPreviewForm
     end
     object tbDivider4: TToolButton
       Left = 449
-      Height = 26
+      Height = 5
       Top = 0
       Caption = 'tbDivider4'
       Style = tbsDivider
@@ -165,7 +165,7 @@ object GridPrintPreviewForm: TGridPrintPreviewForm
     end
     object tbDivider5: TToolButton
       Left = 510
-      Height = 26
+      Height = 5
       Top = 0
       Caption = 'tbDivider5'
       Style = tbsDivider
@@ -210,14 +210,14 @@ object GridPrintPreviewForm: TGridPrintPreviewForm
     end
     object tbDivider6: TToolButton
       Left = 599
-      Height = 26
+      Height = 5
       Top = 0
       Caption = 'tbDivider6'
       Style = tbsDivider
     end
     object tbDivider7: TToolButton
       Left = 642
-      Height = 26
+      Height = 5
       Top = 0
       Caption = 'tbDivider7'
       Style = tbsDivider

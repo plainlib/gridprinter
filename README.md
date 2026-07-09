@@ -263,4 +263,22 @@ When its `PreviewDialog` property is linked to a `TGridPrintPreviewDialog` insta
 
 ---
 
+## Modifications
+
+This version of GridPrinter has been modified from the original by Werner Pamler.
+
+**Original:**  
+- Author: Werner Pamler  
+- License: Modified LGPL-2 (with linking exception, like Lazarus LCL)  
+- Source: [GridPrinter on Free Pascal wiki](https://wiki.freepascal.org/GridPrinter)
+
+**Modifications:**  
+- Modified for use in **Notetask** application (© 2024 Alexander Tverskoy)  
+- Enhancements:  
+  - Enhanced tag printing support
+
+These modifications are distributed under the same license as the original: **Modified LGPL-2** with linking exception.
+
+--
+
 *This README is based on the [GridPrinter wiki page](https://wiki.freepascal.org/GridPrinter) (last edited 14 December 2022).*
