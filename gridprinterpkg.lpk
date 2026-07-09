@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="5">
+    <PathDelim Value="\"/>
+    <Name Value="GridPrinterPkg"/>
+    <Type Value="RunAndDesignTime"/>
+    <Author Value="W. Pamler"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <OtherUnitFiles Value="source"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+    </CompilerOptions>
+    <Description Value="A package to simplify printing of string grids and other descendants of TCustomGrid. Contains also a print preview dialog, as well as standard actions."/>
+    <License Value="Modified LGPL-2 (with linking exception, like LCL)."/>
+    <Version Minor="7"/>
+    <Files Count="8">
+      <Item1>
+        <Filename Value="source\gridprnheaderfooterform.pas"/>
+        <UnitName Value="GridPrnHeaderFooterForm"/>
+      </Item1>
+      <Item2>
+        <Filename Value="source\gridprn.pas"/>
+        <UnitName Value="GridPrn"/>
+      </Item2>
+      <Item3>
+        <Filename Value="source\gridprnpreviewform.pas"/>
+        <UnitName Value="GridPrnPreviewForm"/>
+      </Item3>
+      <Item4>
+        <Filename Value="source\gridprnreg.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="GridPrnReg"/>
+      </Item4>
+      <Item5>
+        <Filename Value="source\gridprnpreviewdlg.pas"/>
+        <UnitName Value="GridPrnPreviewDlg"/>
+      </Item5>
+      <Item6>
+        <Filename Value="source\gridprnstrings.pas"/>
+        <UnitName Value="GridPrnStrings"/>
+      </Item6>
+      <Item7>
+        <Filename Value="source\gridprnactions.pas"/>
+        <UnitName Value="GridPrnActions"/>
+      </Item7>
+      <Item8>
+        <Filename Value="source\gridprnscalingform.pas"/>
+        <UnitName Value="GridPrnScalingForm"/>
+      </Item8>
+    </Files>
+    <CompatibilityMode Value="True"/>
+    <LazDoc Paths="docs\xml"/>
+    <i18n>
+      <EnableI18N Value="True"/>
+      <OutDir Value="languages"/>
+      <EnableI18NForLFM Value="True"/>
+    </i18n>
+    <RequiredPkgs Count="2">
+      <Item1>
+        <PackageName Value="Printer4Lazarus"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="LCL"/>
+      </Item2>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+      <UseFileFilters Value="True"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>

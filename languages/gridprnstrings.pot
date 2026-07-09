@@ -1,0 +1,289 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8"
+
+#: gridprnstrings.rsbottommargin
+msgid "Bottom margin"
+msgstr ""
+
+#: gridprnstrings.rscenterhor
+msgctxt "gridprnstrings.rscenterhor"
+msgid "Center horizontally"
+msgstr ""
+
+#: gridprnstrings.rscenterhorhint
+msgid "Center grid in page horizontally"
+msgstr ""
+
+#: gridprnstrings.rscentervert
+msgctxt "gridprnstrings.rscentervert"
+msgid "Center vertically"
+msgstr ""
+
+#: gridprnstrings.rscenterverthint
+msgid "Center grid in page vertically"
+msgstr ""
+
+#: gridprnstrings.rsclose
+msgid "Close"
+msgstr ""
+
+#: gridprnstrings.rsfont
+msgid "Font"
+msgstr ""
+
+#: gridprnstrings.rsfooter
+msgid "Footer"
+msgstr ""
+
+#: gridprnstrings.rsfootermargin
+msgid "Footer margin"
+msgstr ""
+
+#: gridprnstrings.rsheader
+msgid "Header"
+msgstr ""
+
+#: gridprnstrings.rsheaderfooter
+msgctxt "gridprnstrings.rsheaderfooter"
+msgid "Header/footer..."
+msgstr ""
+
+#: gridprnstrings.rsheaderfooterhint
+msgctxt "gridprnstrings.rsheaderfooterhint"
+msgid "Header/footer configuration"
+msgstr ""
+
+#: gridprnstrings.rsheaderfootersectionparameterinfo
+msgid ""
+"Each section can contain the following parameters:\n"
+"  $DATE - Current date\n"
+"  $TIME - Current time\n"
+"  $PAGE - Page number\n"
+"  $PAGECOUNT - Number of pages\n"
+"  $FULL_FILENAME - Full name of the printed file\n"
+"  $FILENAME - Name of the printed file, without path\n"
+" $PATH - Path of the printed file"
+msgstr ""
+
+#: gridprnstrings.rsheadermargin
+msgid "Header margin"
+msgstr ""
+
+#: gridprnstrings.rslandscape
+msgctxt "gridprnstrings.rslandscape"
+msgid "Landscape"
+msgstr ""
+
+#: gridprnstrings.rslandscapehint
+msgctxt "gridprnstrings.rslandscapehint"
+msgid "Landscape page orientation"
+msgstr ""
+
+#: gridprnstrings.rsleftmargin
+msgid "Left margin"
+msgstr ""
+
+#: gridprnstrings.rslinecolor
+msgid "Line color"
+msgstr ""
+
+#: gridprnstrings.rslinewidthmm
+msgid "Line width (mm)"
+msgstr ""
+
+#: gridprnstrings.rsmanualscalefactor
+msgid "Manual scale factor"
+msgstr ""
+
+#: gridprnstrings.rsoriginalsize
+msgid "Original size (100%)"
+msgstr ""
+
+#: gridprnstrings.rspageandzoominfo
+#, object-pascal-format
+msgid "Page %0:d of %1:d, Zoom %2:d %%"
+msgstr ""
+
+#: gridprnstrings.rspageinfo
+#, object-pascal-format
+msgid "Page %0:d of %1:d"
+msgstr ""
+
+#: gridprnstrings.rspageinfopanel
+msgid "Page numbers"
+msgstr ""
+
+#: gridprnstrings.rspagemargins
+msgctxt "gridprnstrings.rspagemargins"
+msgid "Margins"
+msgstr ""
+
+#: gridprnstrings.rspagemarginsconfig
+msgid "Page margins configuration"
+msgstr ""
+
+#: gridprnstrings.rspagemarginshint
+msgid "Show/hide page margins"
+msgstr ""
+
+#: gridprnstrings.rspages
+msgid "page(s)"
+msgstr ""
+
+#: gridprnstrings.rspagesetuphint
+msgid "Page setup options"
+msgstr ""
+
+#: gridprnstrings.rsportrait
+msgctxt "gridprnstrings.rsportrait"
+msgid "Portrait"
+msgstr ""
+
+#: gridprnstrings.rsportraithint
+msgctxt "gridprnstrings.rsportraithint"
+msgid "Portrait page orientation"
+msgstr ""
+
+#: gridprnstrings.rsprint
+msgid "Print"
+msgstr ""
+
+#: gridprnstrings.rsprintcolsfirst
+msgctxt "gridprnstrings.rsprintcolsfirst"
+msgid "Columns first"
+msgstr ""
+
+#: gridprnstrings.rsprintcolsfirsthint
+msgctxt "gridprnstrings.rsprintcolsfirsthint"
+msgid ""
+"First print columns from top to bottom,\n"
+"then print from left to right"
+msgstr ""
+
+#: gridprnstrings.rsprintellipsis
+msgid "Print..."
+msgstr ""
+
+#: gridprnstrings.rsprintgrid
+msgid "Print grid"
+msgstr ""
+
+#: gridprnstrings.rsprintingscalefactor
+msgid "Printer Scale Factor"
+msgstr ""
+
+#: gridprnstrings.rsprintpreview
+msgid "Print Preview"
+msgstr ""
+
+#: gridprnstrings.rsprintpreviewellipsis
+msgctxt "gridprnstrings.rsprintpreviewellipsis"
+msgid "Preview..."
+msgstr ""
+
+#: gridprnstrings.rsprintrowsfirst
+msgctxt "gridprnstrings.rsprintrowsfirst"
+msgid "Rows first"
+msgstr ""
+
+#: gridprnstrings.rsprintrowsfirsthint
+msgctxt "gridprnstrings.rsprintrowsfirsthint"
+msgid ""
+"First print rows from left to right,\n"
+"then print from top to bottom"
+msgstr ""
+
+#: gridprnstrings.rsrightmargin
+msgid "Right margin"
+msgstr ""
+
+#: gridprnstrings.rsscalefactorinfo
+#, object-pascal-format
+msgid "Current scaling factor: %.2f"
+msgstr ""
+
+#: gridprnstrings.rsscalegridtoheightof
+msgid "Scale grid to height of"
+msgstr ""
+
+#: gridprnstrings.rsscalegridtowidthof
+msgid "Scale grid to width of"
+msgstr ""
+
+#: gridprnstrings.rsscaleprinter
+msgid "Scale printout..."
+msgstr ""
+
+#: gridprnstrings.rsscaleprinterhint
+msgid "Scaling of print output"
+msgstr ""
+
+#: gridprnstrings.rsselectscalefactorforprinting
+msgid "Select the scale factor for printing"
+msgstr ""
+
+#: gridprnstrings.rsshow
+msgid "Show"
+msgstr ""
+
+#: gridprnstrings.rsshowdividingline
+msgid "Show dividing line"
+msgstr ""
+
+#: gridprnstrings.rsshowfirstpage
+msgid "Show first page"
+msgstr ""
+
+#: gridprnstrings.rsshowlastpage
+msgid "Show last page"
+msgstr ""
+
+#: gridprnstrings.rsshownextpage
+msgid "Show next page"
+msgstr ""
+
+#: gridprnstrings.rsshowprevpage
+msgid "Show previous page"
+msgstr ""
+
+#: gridprnstrings.rstextincenteredsection
+msgid "Text in centered section"
+msgstr ""
+
+#: gridprnstrings.rstextinleftalignedsection
+msgid "Text in left-aligned section"
+msgstr ""
+
+#: gridprnstrings.rstextinrightalignedsection
+msgid "Text in right-aligned section"
+msgstr ""
+
+#: gridprnstrings.rstopmargin
+msgid "Top margin"
+msgstr ""
+
+#: gridprnstrings.rszoomin
+msgid "Zoom in"
+msgstr ""
+
+#: gridprnstrings.rszoominfo
+#, object-pascal-format
+msgid "Zoom %2:d %%"
+msgstr ""
+
+#: gridprnstrings.rszoominfopanel
+msgid "Zoom level"
+msgstr ""
+
+#: gridprnstrings.rszoomout
+msgid "Zoom out"
+msgstr ""
+
+#: gridprnstrings.rszoomtofitpageheight
+msgid "Zoom to fit page height"
+msgstr ""
+
+#: gridprnstrings.rszoomtofitpagewidth
+msgid "Zoom to fit page width"
+msgstr ""
+

@@ -1,0 +1,9 @@
+{"version":1,"strings":[
+{"hash":106805890,"name":"tgridprinterscalingform.rbmanualscalefactor.caption","sourcebytes":[114,115,77,97,110,117,97,108,83,99,97,108,101,70,97,99,116,111,114],"value":"rsManualScaleFactor"},
+{"hash":128905218,"name":"tgridprinterscalingform.lblpageshor.caption","sourcebytes":[108,98,108,80,97,103,101,115,72,111,114],"value":"lblPagesHor"},
+{"hash":182573796,"name":"tgridprinterscalingform.lblpagesvert.caption","sourcebytes":[108,98,108,80,97,103,101,115,86,101,114,116],"value":"lblPagesVert"},
+{"hash":43058367,"name":"tgridprinterscalingform.lblinfo.caption","sourcebytes":[108,98,108,73,110,102,111],"value":"lblInfo"},
+{"hash":208026367,"name":"tgridprinterscalingform.lblscalefactorinfo.caption","sourcebytes":[108,98,108,83,99,97,108,101,70,97,99,116,111,114,73,110,102,111],"value":"lblScaleFactorInfo"},
+{"hash":75469702,"name":"tgridprinterscalingform.cbscaletowidth.caption","sourcebytes":[99,98,83,99,97,108,101,84,111,87,105,100,116,104,79,102],"value":"cbScaleToWidthOf"},
+{"hash":62788390,"name":"tgridprinterscalingform.cbscaletoheight.caption","sourcebytes":[99,98,83,99,97,108,101,84,111,72,101,105,103,104,116,79,102],"value":"cbScaleToHeightOf"}
+]}

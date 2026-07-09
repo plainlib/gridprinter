@@ -1,0 +1,14 @@
+{"version":1,"strings":[
+{"hash":1874375,"name":"tgridprintpreviewform.caption","sourcebytes":[80,114,105,110,116,32,80,114,101,118,105,101,119],"value":"Print Preview"},
+{"hash":191236306,"name":"tgridprintpreviewform.toolbar.caption","sourcebytes":[84,111,111,108,66,97,114],"value":"ToolBar"},
+{"hash":13109985,"name":"tgridprintpreviewform.tbdivider1.caption","sourcebytes":[116,98,68,105,118,105,100,101,114,49],"value":"tbDivider1"},
+{"hash":13109986,"name":"tgridprintpreviewform.tbdivider2.caption","sourcebytes":[116,98,68,105,118,105,100,101,114,50],"value":"tbDivider2"},
+{"hash":13109987,"name":"tgridprintpreviewform.tbdivider3.caption","sourcebytes":[116,98,68,105,118,105,100,101,114,51],"value":"tbDivider3"},
+{"hash":13109988,"name":"tgridprintpreviewform.tbdivider4.caption","sourcebytes":[116,98,68,105,118,105,100,101,114,52],"value":"tbDivider4"},
+{"hash":13109989,"name":"tgridprintpreviewform.tbdivider5.caption","sourcebytes":[116,98,68,105,118,105,100,101,114,53],"value":"tbDivider5"},
+{"hash":231980464,"name":"tgridprintpreviewform.tbpagesetup.caption","sourcebytes":[116,98,80,97,103,101,83,101,116,117,112],"value":"tbPageSetup"},
+{"hash":13109990,"name":"tgridprintpreviewform.tbdivider6.caption","sourcebytes":[116,98,68,105,118,105,100,101,114,54],"value":"tbDivider6"},
+{"hash":13109991,"name":"tgridprintpreviewform.tbdivider7.caption","sourcebytes":[116,98,68,105,118,105,100,101,114,55],"value":"tbDivider7"},
+{"hash":14901026,"name":"tgridprintpreviewform.edpagenumber.text","sourcebytes":[101,100,80,97,103,101,78,117,109,98,101,114],"value":"edPageNumber"},
+{"hash":118944718,"name":"tgridprintpreviewform.acscaleprinter.caption","sourcebytes":[80,114,105,110,116,101,114,32,115,99,97,108,105,110,103,32,102,97,99,116,111,114,46,46,46],"value":"Printer scaling factor..."}
+]}

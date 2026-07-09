@@ -1,0 +1,84 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8"
+
+#: main.rscenterbuttons
+msgid "Buttons for centering grid on page"
+msgstr ""
+
+#: main.rsheaderfooterbutton
+msgid "Header/footer button"
+msgstr ""
+
+#: main.rsnavigationbuttons
+msgid "Navigation buttons"
+msgstr ""
+
+#: main.rsnavigationedit
+msgid "Navigation edit"
+msgstr ""
+
+#: main.rsnoprinterdialog
+msgid "No printer dialog"
+msgstr ""
+
+#: main.rspagemarginsbuttons
+msgid "Page margins button"
+msgstr ""
+
+#: main.rspagenumberinfopanel
+msgid "Page number info"
+msgstr ""
+
+#: main.rspageorientationbuttons
+msgid "Page orientation buttons"
+msgstr ""
+
+#: main.rspagesetupbutton
+msgctxt "main.rspagesetupbutton"
+msgid "Page setup dropdown-menu"
+msgstr ""
+
+#: main.rspagesetupdialog
+msgid "Page setup dialog"
+msgstr ""
+
+#: main.rsprinterdialog
+msgid "Printer dialog"
+msgstr ""
+
+#: main.rsprintersetupdialog
+msgid "Printer setup dialog"
+msgstr ""
+
+#: main.rsprintorderbuttons
+msgid "Print order: colums first or rows first"
+msgstr ""
+
+#: main.rsscaleprinterbutton
+msgid "Scale printer button"
+msgstr ""
+
+#: main.rszoombuttons
+msgid "Zoom buttons"
+msgstr ""
+
+#: main.rszoomlevelinfopanel
+msgid "Zoom level info"
+msgstr ""
+
+#: tmainform.btnpreview.caption
+msgid "Preview..."
+msgstr ""
+
+#: tmainform.btnprint.caption
+msgid "Print..."
+msgstr ""
+
+#: tmainform.caption
+msgid "Multi-Language Demonstration of TGridPrinter"
+msgstr ""
+
+#: tmainform.label1.caption
+msgid "Language:"
+msgstr ""
+

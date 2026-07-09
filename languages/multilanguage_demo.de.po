@@ -1,0 +1,93 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.2\n"
+
+#: main.rscenterbuttons
+msgid "Buttons for centering grid on page"
+msgstr "Schalter zum Zentrieren der Tabelle auf der Seite"
+
+#: main.rsheaderfooterbutton
+msgid "Header/footer button"
+msgstr "Schalter für Kopf-/Fußzeile"
+
+#: main.rsnavigationbuttons
+msgid "Navigation buttons"
+msgstr "Seitenwahl-Schalter"
+
+#: main.rsnavigationedit
+msgid "Navigation edit"
+msgstr "Eingabe der Seitennummer"
+
+#: main.rsnoprinterdialog
+msgid "No printer dialog"
+msgstr "Kein Dialog"
+
+#: main.rspagemarginsbuttons
+msgid "Page margins button"
+msgstr "Schalter für Seitenränder"
+
+#: main.rspagenumberinfopanel
+msgid "Page number info"
+msgstr "Seitennummer-Information"
+
+#: main.rspageorientationbuttons
+msgid "Page orientation buttons"
+msgstr "Schalter für Seitenausrichtung"
+
+#: main.rspagesetupbutton
+msgctxt "main.rspagesetupbutton"
+msgid "Page setup dropdown-menu"
+msgstr "Seiteneinrichtungs-Menü"
+
+#: main.rspagesetupdialog
+msgid "Page setup dialog"
+msgstr "Seiteneinrichtungsdialog"
+
+#: main.rsprinterdialog
+msgid "Printer dialog"
+msgstr "Drucker-Dialog"
+
+#: main.rsprintersetupdialog
+msgid "Printer setup dialog"
+msgstr "Druckereinrichtungsdialog"
+
+#: main.rsprintorderbuttons
+msgid "Print order: colums first or rows first"
+msgstr "Druckreihenfolge: Spalten oder Zeilen zuerst"
+
+#: main.rsscaleprinterbutton
+msgid "Scale printer button"
+msgstr "Schalter für Druck-Skalierung"
+
+#: main.rszoombuttons
+msgid "Zoom buttons"
+msgstr "Schalter für Vergrößerung"
+
+#: main.rszoomlevelinfopanel
+msgid "Zoom level info"
+msgstr "Skalierungs-Information"
+
+#: tmainform.btnpreview.caption
+msgid "Preview..."
+msgstr "Druckvorschau..."
+
+#: tmainform.btnprint.caption
+msgid "Print..."
+msgstr "Drucken..."
+
+#: tmainform.caption
+msgid "Multi-Language Demonstration of TGridPrinter"
+msgstr "Mehrsprachige Demonstration von TGridPrinter"
+
+#: tmainform.label1.caption
+msgid "Language:"
+msgstr "Sprache:"
