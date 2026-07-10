@@ -2,23 +2,15 @@
   This source is only used to compile and install the package.
  }
 
-unit GridPrinterPkg;
+unit gridprinter;
 
 {$warn 5023 off : no warning about unused units}
 interface
 
 uses
   GridPrnHeaderFooterForm, GridPrn, GridPrnPreviewForm, GridPrnReg, 
-  GridPrnPreviewDlg, GridPrnStrings, GridPrnActions, GridPrnScalingForm, 
-  LazarusPackageIntf;
+  GridPrnPreviewDlg, GridPrnStrings, GridPrnActions, GridPrnScalingForm;
 
 implementation
 
-procedure Register;
-begin
-  RegisterUnit('GridPrnReg', @GridPrnReg.Register);
-end;
-
-initialization
-  RegisterPackage('GridPrinterPkg', @Register);
 end.

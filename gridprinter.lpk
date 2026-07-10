@@ -2,8 +2,7 @@
 <CONFIG>
   <Package Version="5">
     <PathDelim Value="\"/>
-    <Name Value="GridPrinterPkg"/>
-    <Type Value="RunAndDesignTime"/>
+    <Name Value="gridprinter"/>
     <Author Value="W. Pamler"/>
     <CompilerOptions>
       <Version Value="11"/>
