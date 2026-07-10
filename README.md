@@ -2,7 +2,7 @@
 
 **TGridPrinter** is a component to simplify printing of string grids or other descendants of `TCustomGrid`. It is bundled together with a ready-made print preview dialog, **TGridPrintPreviewDialog**, as well as standard actions to trigger printing or to show the preview dialog without writing a single line of code.
 
-![GridPrinter component](examples/GridPrinter_v0.2.0.png)
+![GridPrinter component](https://github.com/plainlib/gridprinter/raw/docs/examples/GridPrinter_v0.2.0.png)
 
 **Author:** Werner Pamler  
 **License:** Modified LGPL-2 (with linking exception, like Lazarus LCL).
@@ -229,26 +229,26 @@ The preview dialog includes a toolbar with the following buttons (icons are take
 
 | Icon | Description |
 |------|-------------|
-| ![Print](examples/gridprn_print.png) | Sends the grid to the printer. |
-| ![First page](examples/gridprn_firstpage.png) | Displays the first page. |
-| ![Previous page](examples/gridprn_prevpage.png) | Displays the previous page. |
-| ![Next page](examples/gridprn_nextpage.png) | Displays the next page. |
-| ![Last page](examples/gridprn_lastpage.png) | Displays the last page. |
-| ![Zoom in](examples/gridprn_zoomin.png) | Enlarges the preview. |
-| ![Zoom out](examples/gridprn_zoomout.png) | Reduces the preview. |
-| ![Zoom 100%](examples/gridprn_zoom100.png) | Original size (100%). |
-| ![Zoom to width](examples/gridprn_zoomtowidth.png) | Scales to fill the width. |
-| ![Zoom to height](examples/gridprn_zoomtoheight.png) | Scales to fill the height. |
-| ![Portrait](examples/gridprn_portrait.png) | Switches to portrait orientation. |
-| ![Landscape](examples/gridprn_landscape.png) | Switches to landscape orientation. |
-| ![Header/Footer](examples/gridprn_headerfooter.png) | Opens dialog to set up header/footer. |
-| ![Margins](examples/gridprn_pagemargins.png) | Displays margins as draggable lines. |
-| ![Rows first](examples/gridprn_rowsfirst.png) | Prints rows first for large grids. |
-| ![Cols first](examples/gridprn_colsfirst.png) | Prints columns first. |
-| ![Center horizontal](examples/gridprn_centerhor.png) | Centers grid horizontally. |
-| ![Center vertical](examples/gridprn_centervert.png) | Centers grid vertically. |
-| ![Scale printer](examples/gridprn_scaleprinter.png) | Opens a dialog to set scale factor. |
-| ![Page setup](examples/gridprn_pagesetup.png) | Dropdown menu with page setup options. |
+| ![Print](https://github.com/plainlib/gridprinter/raw/docs/examples/gridprn_print.png) | Sends the grid to the printer. |
+| ![First page](https://github.com/plainlib/gridprinter/raw/docs/examples/gridprn_firstpage.png) | Displays the first page. |
+| ![Previous page](https://github.com/plainlib/gridprinter/raw/docs/examples/gridprn_prevpage.png) | Displays the previous page. |
+| ![Next page](https://github.com/plainlib/gridprinter/raw/docs/examples/gridprn_nextpage.png) | Displays the next page. |
+| ![Last page](https://github.com/plainlib/gridprinter/raw/docs/examples/gridprn_lastpage.png) | Displays the last page. |
+| ![Zoom in](https://github.com/plainlib/gridprinter/raw/docs/examples/gridprn_zoomin.png) | Enlarges the preview. |
+| ![Zoom out](https://github.com/plainlib/gridprinter/raw/docs/examples/gridprn_zoomout.png) | Reduces the preview. |
+| ![Zoom 100%](https://github.com/plainlib/gridprinter/raw/docs/examples/gridprn_zoom100.png) | Original size (100%). |
+| ![Zoom to width](https://github.com/plainlib/gridprinter/raw/docs/examples/gridprn_zoomtowidth.png) | Scales to fill the width. |
+| ![Zoom to height](https://github.com/plainlib/gridprinter/raw/docs/examples/gridprn_zoomtoheight.png) | Scales to fill the height. |
+| ![Portrait](https://github.com/plainlib/gridprinter/raw/docs/examples/gridprn_portrait.png) | Switches to portrait orientation. |
+| ![Landscape](https://github.com/plainlib/gridprinter/raw/docs/examples/gridprn_landscape.png) | Switches to landscape orientation. |
+| ![Header/Footer](https://github.com/plainlib/gridprinter/raw/docs/examples/gridprn_headerfooter.png) | Opens dialog to set up header/footer. |
+| ![Margins](https://github.com/plainlib/gridprinter/raw/docs/examples/gridprn_pagemargins.png) | Displays margins as draggable lines. |
+| ![Rows first](https://github.com/plainlib/gridprinter/raw/docs/examples/gridprn_rowsfirst.png) | Prints rows first for large grids. |
+| ![Cols first](https://github.com/plainlib/gridprinter/raw/docs/examples/gridprn_colsfirst.png) | Prints columns first. |
+| ![Center horizontal](https://github.com/plainlib/gridprinter/raw/docs/examples/gridprn_centerhor.png) | Centers grid horizontally. |
+| ![Center vertical](https://github.com/plainlib/gridprinter/raw/docs/examples/gridprn_centervert.png) | Centers grid vertically. |
+| ![Scale printer](https://github.com/plainlib/gridprinter/raw/docs/examples/gridprn_scaleprinter.png) | Opens a dialog to set scale factor. |
+| ![Page setup](https://github.com/plainlib/gridprinter/raw/docs/examples/gridprn_pagesetup.png) | Dropdown menu with page setup options. |
 
 ---
 
