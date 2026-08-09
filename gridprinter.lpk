@@ -11,6 +11,11 @@
         <OtherUnitFiles Value="source"/>
         <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
       </SearchPaths>
+      <Other>
+        <CompilerMessages>
+          <IgnoredMessages idx5024="True"/>
+        </CompilerMessages>
+      </Other>
     </CompilerOptions>
     <Description Value="A package to simplify printing of string grids and other descendants of TCustomGrid. Contains also a print preview dialog, as well as standard actions."/>
     <License Value="Modified LGPL-2 (with linking exception, like LCL)."/>
